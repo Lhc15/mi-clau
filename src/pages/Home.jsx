@@ -17,7 +17,7 @@ export default function Home() {
   // ── Sección beso: scroll local ──
   const { scrollYProgress: kissProgress } = useScroll({
     target: kissRef,
-    offset: ['start end', 'center start'],
+    offset: ['start 0.8', 'end 0.2'],
   })
 
   // ── Disparar confeti cuando citasRef entra en viewport ──
@@ -135,18 +135,18 @@ function HeroSection() {
 ══════════════════════════════════════════════════════ */
 function KissScroll({ progress }) {
   // Figura izquierda: rota de -15° a +12° (se inclina hacia la derecha/beso)
-  const rotateLeft  = useTransform(progress, [0.05, 0.6], [-18, 14])
-  const xLeft       = useTransform(progress, [0.05, 0.6], ['-4vw', '14vw'])
-  const scaleLeft   = useTransform(progress, [0.05, 0.6], [0.9, 1.05])
+  const rotateLeft  = useTransform(progress, [0.0, 0.5], [-18, 14])
+  const xLeft       = useTransform(progress, [0.0, 0.5], ['-4vw', '14vw'])
+  const scaleLeft   = useTransform(progress, [0.0, 0.5], [0.9, 1.05])
 
   // Figura derecha
-  const rotateRight = useTransform(progress, [0.05, 0.6], [18, -14])
-  const xRight      = useTransform(progress, [0.05, 0.6], ['4vw', '-14vw'])
-  const scaleRight  = useTransform(progress, [0.05, 0.6], [0.9, 1.05])
+  const rotateRight = useTransform(progress, [0.0, 0.5], [18, -14])
+  const xRight      = useTransform(progress, [0.0, 0.5], ['4vw', '-14vw'])
+  const scaleRight  = useTransform(progress, [0.0, 0.5], [0.9, 1.05])
 
   // Label que aparece en el beso
-  const labelOpacity = useTransform(progress, [0.5, 0.65], [0, 1])
-  const labelScale   = useTransform(progress, [0.5, 0.65], [0.7, 1])
+  const labelOpacity = useTransform(progress, [0.4, 0.55], [0, 1])
+  const labelScale   = useTransform(progress, [0.4, 0.55], [0.7, 1])
 
   return (
     <div className={styles.kissWrap}>

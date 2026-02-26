@@ -171,7 +171,7 @@
 
 /* ─── BESO EN SCROLL ─── */
 .kissSection {
-  height: 230vh;
+  height: 140vh;
   background: var(--black);
   position: relative;
 }
