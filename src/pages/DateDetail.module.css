@@ -1,102 +1,328 @@
-.page { min-height: 100dvh; background-color: #e8f5d0;
+/* ── Page ── */
+.page {
+  min-height: 100dvh;
+  background-color: #e8f5d0;
   background-image:
-    radial-gradient(ellipse 9px 7px   at  7%   4%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 6px 9px   at 12%   8%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 8px 5px   at  4%  14%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 10px 7px  at 26%   3%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 6px 10px  at 31%   9%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 7px 5px   at 22%  13%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 9px 6px   at 48%   5%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 7px 10px  at 54%  10%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 8px 5px   at 43%  15%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 10px 7px  at 70%   4%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 6px 9px   at 76%   9%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 8px 5px   at 65%  14%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 9px 7px   at 90%   3%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 7px 10px  at 96%   8%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 9px 7px   at 14%  24%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 6px 9px   at 19%  30%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 10px 6px  at 37%  22%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 7px 10px  at 43%  28%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 9px 7px   at 59%  23%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 6px 9px   at 65%  29%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 10px 7px  at 80%  22%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 7px 10px  at 86%  28%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 9px 6px   at  5%  44%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 7px 9px   at 11%  50%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 10px 7px  at 28%  43%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 6px 10px  at 34%  49%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 9px 7px   at 50%  44%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 7px 9px   at 56%  50%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 10px 6px  at 72%  43%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 6px 10px  at 78%  49%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 9px 7px   at 16%  63%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 6px 9px   at 21%  69%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 10px 7px  at 39%  62%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 7px 10px  at 45%  68%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 9px 6px   at 61%  63%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 6px 9px   at 67%  69%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 10px 7px  at 82%  62%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 7px 9px   at 88%  68%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 9px 7px   at  8%  82%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 6px 10px  at 13%  88%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 10px 6px  at 30%  81%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 7px 9px   at 36%  87%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 9px 7px   at 52%  82%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 6px 10px  at 58%  88%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 10px 7px  at 74%  81%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 7px 9px   at 80%  87%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 9px 6px   at 93%  82%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 6px 9px   at 99%  88%,  #1a1050 100%, transparent 0); position: relative; overflow: hidden; }
-.inner { max-width: var(--max-w); margin: 0 auto; padding: 0 0 calc(3rem + var(--safe-bottom)); position: relative; z-index: 1; }
+    radial-gradient(ellipse 9px 7px at  7%  4%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 6px 9px at 12%  8%,  #1a1050 100%, transparent 0),
+    radial-gradient(ellipse 8px 5px at  4% 14%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 10px 7px at 26%  3%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 6px 10px at 31%  9%,  #1a1050 100%, transparent 0),
+    radial-gradient(ellipse 9px 6px at 48%  5%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 7px 10px at 54% 10%,  #1a1050 100%, transparent 0),
+    radial-gradient(ellipse 10px 7px at 70%  4%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 6px 9px at 76%  9%,  #1a1050 100%, transparent 0),
+    radial-gradient(ellipse 9px 7px at 90%  3%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 14px 10px at 18% 22%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 9px 14px at 25% 30%,  #1a1050 100%, transparent 0),
+    radial-gradient(ellipse 12px 8px at  8% 38%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 14px 10px at 45% 25%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 9px 13px at 52% 32%,  #1a1050 100%, transparent 0),
+    radial-gradient(ellipse 13px 9px at 35% 40%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 12px 9px at 68% 22%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 8px 13px at 75% 30%,  #1a1050 100%, transparent 0),
+    radial-gradient(ellipse 11px 7px at 58% 38%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 13px 9px at 88% 24%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 9px 7px at  5% 55%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 7px 10px at 11% 62%,  #1a1050 100%, transparent 0),
+    radial-gradient(ellipse 11px 8px at 30% 52%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 8px 12px at 37% 60%,  #1a1050 100%, transparent 0),
+    radial-gradient(ellipse 10px 7px at 55% 54%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 7px 11px at 62% 61%,  #1a1050 100%, transparent 0),
+    radial-gradient(ellipse 12px 8px at 78% 53%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 8px 12px at 85% 61%,  #1a1050 100%, transparent 0),
+    radial-gradient(ellipse 10px 7px at 94% 56%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 9px 7px at 15% 75%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 7px 10px at 22% 82%,  #1a1050 100%, transparent 0),
+    radial-gradient(ellipse 11px 8px at 42% 73%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 8px 12px at 49% 80%,  #1a1050 100%, transparent 0),
+    radial-gradient(ellipse 12px 8px at 65% 75%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 9px 13px at 72% 82%,  #1a1050 100%, transparent 0),
+    radial-gradient(ellipse 10px 7px at 88% 76%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 7px 10px at 95% 83%,  #1a1050 100%, transparent 0);
+  position: relative;
+  overflow: hidden;
+}
 
-.header { padding: 2.2rem 1.5rem 0; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+.inner {
+  max-width: 430px;
+  margin: 0 auto;
+  padding: 0 0 calc(3rem + env(safe-area-inset-bottom, 16px));
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Header ── */
+.header {
+  padding: 2rem 1.5rem 1.5rem;
+  background: rgba(232,245,208,0.9);
+  margin: 0.8rem;
+  border-radius: 16px;
+  border: 1.5px solid rgba(68,85,238,0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
 .back {
-  font-family: var(--font-body); font-size: 0.65rem; font-weight: 600;
-  letter-spacing: 0.2em; text-transform: uppercase; color: var(--black);
-  padding: 0; align-self: flex-start; margin-bottom: 0.3rem; transition: color 0.2s;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue);
+  padding: 0;
+  align-self: flex-start;
+  margin-bottom: 0.3rem;
+  transition: opacity 0.2s;
 }
-.back:hover { color: var(--black); }
-.headerRule { height: 2px; background: var(--black); margin-bottom: 0.6rem; }
-.headerDate {
-  font-family: var(--font-body); font-size: 0.65rem; font-weight: 600;
-  letter-spacing: 0.2em; text-transform: uppercase; color: var(--fucsia);
-}
-.title {
-  font-family: var(--font-display); font-size: 2.8rem; color: var(--black);
-  letter-spacing: 0.02em; line-height: 1;
-}
-.desc { font-family: var(--font-body); font-size: 0.85rem; font-weight: 400; color: var(--black); line-height: 1.6; }
+.back:hover { opacity: 0.7; }
 
-.chosenBanner { margin: 0 1.5rem; overflow: hidden; }
+.headerRule { height: 2px; background: var(--blue); margin-bottom: 0.4rem; }
+
+.headerDate {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #f0147a;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--black);
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.desc {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgba(17,17,17,0.65);
+  line-height: 1.55;
+}
+
+/* ── Chosen banner ── */
+.chosenBanner { margin: 0 0.8rem 0.8rem; overflow: hidden; }
 .chosenInner {
   display: flex; align-items: center; gap: 0.8rem;
-  background: rgba(61,36,8,0.12); border: 1.5px solid rgba(61,36,8,0.25);
-  border-radius: 8px; padding: 0.9rem 1rem; margin-bottom: 1rem;
+  background: rgba(232,245,208,0.92);
+  border: 1.5px solid rgba(68,85,238,0.25);
+  border-radius: 12px; padding: 0.9rem 1rem;
 }
 .chosenEmoji { font-size: 1.6rem; flex-shrink: 0; }
 .chosenLabel {
   font-family: var(--font-body); font-size: 0.6rem; font-weight: 600;
-  letter-spacing: 0.15em; text-transform: uppercase; color: var(--fucsia); line-height: 1;
+  letter-spacing: 0.15em; text-transform: uppercase; color: #f0147a; line-height: 1;
 }
-.chosenName { font-family: var(--font-display); font-size: 1.2rem; color: var(--black); line-height: 1.2; letter-spacing: 0.02em; }
+.chosenName { font-family: var(--font-display); font-size: 1.2rem; color: var(--black); letter-spacing: 0.02em; }
 .chosenChange {
-  margin-left: auto; font-family: var(--font-body); font-size: 0.68rem; font-weight: 500;
-  letter-spacing: 0.08em; color: var(--black); text-decoration: underline;
-  text-underline-offset: 2px; flex-shrink: 0; transition: color 0.2s;
+  margin-left: auto; font-family: var(--font-body); font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.08em; color: var(--blue); text-decoration: underline; text-underline-offset: 2px;
+  flex-shrink: 0; transition: opacity 0.2s;
 }
-.chosenChange:hover { color: var(--black); }
+.chosenChange:hover { opacity: 0.7; }
 
-.sectionLabel { display: flex; align-items: center; gap: 0.8rem; padding: 0 1.5rem; margin-bottom: 1.2rem; }
-.sectionLabel span {
-  font-family: var(--font-body); font-size: 0.62rem; font-weight: 600;
-  letter-spacing: 0.18em; text-transform: uppercase; color: var(--black); flex-shrink: 0;
+/* ── Deck meta ── */
+.deckMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.3rem;
+  margin-bottom: 0.8rem;
 }
-.sectionLine { flex: 1; height: 1px; background: rgba(61,36,8,0.25); }
+.deckLabel {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(17,17,17,0.5);
+}
+.deckCounter {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--blue);
+  letter-spacing: 0.05em;
+}
 
-.restaurants { display: flex; flex-direction: column; gap: 0; }
+/* ── CARD DECK ── */
+.deck {
+  position: relative;
+  margin: 0 1rem;
+  /* Height = card height + peek space */
+  height: 520px;
+}
 
+/* Peeking cards behind */
+.cardPeek {
+  position: absolute;
+  left: 0; right: 0;
+  height: 480px;
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+/* Active card */
+.card {
+  position: absolute;
+  left: 0; right: 0;
+  top: 0;
+  background: #4455ee;
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 20;
+  box-shadow: 0 8px 32px rgba(68,85,238,0.35), 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.cardAccent {
+  height: 6px;
+  width: 100%;
+}
+
+.cardBody {
+  padding: 1.4rem 1.4rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+.cardEmoji { font-size: 2rem; flex-shrink: 0; line-height: 1; }
+
+.cardName {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: white;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+.cardSub {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  font-style: italic;
+}
+.cardPrice {
+  margin-left: auto;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: #d4f060;
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+
+.cardTag {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.85);
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.7rem;
+  border-radius: 50px;
+  align-self: flex-start;
+}
+
+.cardDesc {
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+}
+
+.cardDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 0.7rem;
+}
+.cardDetail {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+}
+
+.cardActions {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  padding-top: 0.4rem;
+}
+.mapsBtn {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.55);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s;
+  flex-shrink: 0;
+}
+.mapsBtn:hover { color: white; }
+
+.voteBtn {
+  flex: 1;
+  background: #f0147a;
+  color: white;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.3);
+  transition: background 0.15s;
+}
+.voteBtn:hover { background: #ff2d8a; }
+
+.votedLabel {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: #d4f060;
+}
+
+/* ── Nav ── */
+.deckNav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.3rem 0;
+}
+.navBtn {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blue);
+  padding: 0.5rem 0;
+  transition: opacity 0.2s;
+  background: rgba(232,245,208,0.7);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+.navBtn:disabled { opacity: 0.25; pointer-events: none; }
+.navBtn:not(:disabled):hover { opacity: 0.7; }
+
+/* ── Confetti ── */
 .confetti { position: fixed; inset: 0; pointer-events: none; z-index: 200; overflow: hidden; }
 
 .notFound { display: flex; align-items: center; justify-content: center; min-height: 100dvh; }
-.notFound button { font-family: var(--font-body); font-size: 0.8rem; color: var(--black); letter-spacing: 0.1em; }
+.notFound button { font-family: var(--font-body); font-size: 0.8rem; color: var(--blue); }

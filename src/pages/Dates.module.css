@@ -61,11 +61,14 @@
 
 /* Header */
 .header {
-  padding: 2.2rem 1.5rem 0;
+  padding: 2.2rem 1.5rem 1.2rem;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
   margin-bottom: 0;
+  background: rgba(232,245,208,0.88);
+  border-radius: 0 0 12px 12px;
+  margin: 0 0.5rem;
 }
 .back {
   font-family: var(--font-body);
@@ -116,13 +119,13 @@
   gap: 1rem;
   padding: 1.4rem 1.5rem;
   text-align: left;
-  background: transparent;
+  background: rgba(232,245,208,0.85);
   border-bottom: 1px solid rgba(61,36,8,0.2);
   transition: background 0.15s;
   position: relative;
 }
 .row:first-child { border-top: 1px solid rgba(61,36,8,0.2); }
-.row:hover { background: rgba(61,36,8,0.08); }
+.row:hover { background: rgba(212,240,96,0.5); }
 
 .rowNum {
   font-family: var(--font-display);
