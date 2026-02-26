@@ -1,11 +1,62 @@
 .page {
   min-height: 100dvh;
-  background: var(--black);
+  background-color: #e8d832;
+  background-image:
+    radial-gradient(ellipse 9px 7px   at  7%   4%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 6px 9px   at 12%   8%,  #2a1605 100%, transparent 0),
+    radial-gradient(ellipse 8px 5px   at  4%  14%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 10px 7px  at 26%   3%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 6px 10px  at 31%   9%,  #2a1605 100%, transparent 0),
+    radial-gradient(ellipse 7px 5px   at 22%  13%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 9px 6px   at 48%   5%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 7px 10px  at 54%  10%,  #2a1605 100%, transparent 0),
+    radial-gradient(ellipse 8px 5px   at 43%  15%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 10px 7px  at 70%   4%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 6px 9px   at 76%   9%,  #2a1605 100%, transparent 0),
+    radial-gradient(ellipse 8px 5px   at 65%  14%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 9px 7px   at 90%   3%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 7px 10px  at 96%   8%,  #2a1605 100%, transparent 0),
+    radial-gradient(ellipse 9px 7px   at 14%  24%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 6px 9px   at 19%  30%,  #2a1605 100%, transparent 0),
+    radial-gradient(ellipse 10px 6px  at 37%  22%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 7px 10px  at 43%  28%,  #2a1605 100%, transparent 0),
+    radial-gradient(ellipse 9px 7px   at 59%  23%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 6px 9px   at 65%  29%,  #2a1605 100%, transparent 0),
+    radial-gradient(ellipse 10px 7px  at 80%  22%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 7px 10px  at 86%  28%,  #2a1605 100%, transparent 0),
+    radial-gradient(ellipse 9px 6px   at  5%  44%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 7px 9px   at 11%  50%,  #2a1605 100%, transparent 0),
+    radial-gradient(ellipse 10px 7px  at 28%  43%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 6px 10px  at 34%  49%,  #2a1605 100%, transparent 0),
+    radial-gradient(ellipse 9px 7px   at 50%  44%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 7px 9px   at 56%  50%,  #2a1605 100%, transparent 0),
+    radial-gradient(ellipse 10px 6px  at 72%  43%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 6px 10px  at 78%  49%,  #2a1605 100%, transparent 0),
+    radial-gradient(ellipse 9px 7px   at 16%  63%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 6px 9px   at 21%  69%,  #2a1605 100%, transparent 0),
+    radial-gradient(ellipse 10px 7px  at 39%  62%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 7px 10px  at 45%  68%,  #2a1605 100%, transparent 0),
+    radial-gradient(ellipse 9px 6px   at 61%  63%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 6px 9px   at 67%  69%,  #2a1605 100%, transparent 0),
+    radial-gradient(ellipse 10px 7px  at 82%  62%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 7px 9px   at 88%  68%,  #2a1605 100%, transparent 0),
+    radial-gradient(ellipse 9px 7px   at  8%  82%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 6px 10px  at 13%  88%,  #2a1605 100%, transparent 0),
+    radial-gradient(ellipse 10px 6px  at 30%  81%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 7px 9px   at 36%  87%,  #2a1605 100%, transparent 0),
+    radial-gradient(ellipse 9px 7px   at 52%  82%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 6px 10px  at 58%  88%,  #2a1605 100%, transparent 0),
+    radial-gradient(ellipse 10px 7px  at 74%  81%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 7px 9px   at 80%  87%,  #2a1605 100%, transparent 0),
+    radial-gradient(ellipse 9px 6px   at 93%  82%,  #3d2408 100%, transparent 0),
+    radial-gradient(ellipse 6px 9px   at 99%  88%,  #2a1605 100%, transparent 0);
 }
 .inner {
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 0 0 calc(3rem + var(--safe-bottom));
+  position: relative;
+  z-index: 1;
 }
 
 /* Header */
@@ -22,7 +73,7 @@
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--camel);
+  color: var(--brown);
   padding: 0;
   align-self: flex-start;
   transition: color 0.2s;
@@ -50,7 +101,7 @@
   font-family: var(--font-body);
   font-size: 0.7rem;
   font-weight: 300;
-  color: var(--camel);
+  color: var(--brown);
   letter-spacing: 0.1em;
 }
 
@@ -66,12 +117,12 @@
   padding: 1.4rem 1.5rem;
   text-align: left;
   background: transparent;
-  border-bottom: 1px solid rgba(201,169,110,0.15);
+  border-bottom: 1px solid rgba(61,36,8,0.2);
   transition: background 0.15s;
   position: relative;
 }
-.row:first-child { border-top: 1px solid rgba(201,169,110,0.15); }
-.row:hover { background: rgba(245,230,66,0.04); }
+.row:first-child { border-top: 1px solid rgba(61,36,8,0.2); }
+.row:hover { background: rgba(61,36,8,0.08); }
 
 .rowNum {
   font-family: var(--font-display);
@@ -89,7 +140,7 @@
   font-weight: 400;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--camel);
+  color: var(--brown);
 }
 .rowBadge {
   background: rgba(240,20,122,0.15);
@@ -106,7 +157,7 @@
 .rowTitle {
   font-family: var(--font-display);
   font-size: 2rem;
-  color: var(--offwhite);
+  color: var(--black);
   line-height: 1;
   letter-spacing: 0.02em;
 }
@@ -114,12 +165,12 @@
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 300;
-  color: rgba(250,246,238,0.5);
+  color: var(--brown);
   line-height: 1.5;
 }
 .rowArrow {
   font-size: 1.1rem;
-  color: var(--camel);
+  color: var(--brown);
   transition: transform 0.2s, color 0.2s;
   padding-top: 0.2rem;
   flex-shrink: 0;
