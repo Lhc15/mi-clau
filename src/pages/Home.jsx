@@ -1,165 +1,271 @@
-import { useRef } from 'react'
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
+import { useRef, useEffect, useState } from 'react'
+import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import styles from './Home.module.css'
 
-// ── Fotos placeholder — sustitúyelas por las tuyas en /public/photos/
-const PHOTOS = [
-  { src: '/photos/photo1.png', alt: 'foto 1' },
-  { src: '/photos/photo2.png', alt: 'foto 2' },
-  { src: '/photos/photo3.png', alt: 'foto 3' },
-  { src: '/photos/photo4.png', alt: 'foto 4' },
-]
-
-// Posiciones y rotaciones fijas para cada foto
-const PHOTO_CONFIGS = [
-  { x: '-8vw',  top: '8vh',  rotate: -6,  scale: 1.0,  delay: 0    },
-  { x: '38vw',  top: '22vh', rotate:  8,  scale: 0.88, delay: 0.12 },
-  { x: '-2vw',  top: '52vh', rotate: -4,  scale: 0.95, delay: 0.06 },
-  { x: '42vw',  top: '68vh', rotate:  11, scale: 0.82, delay: 0.18 },
-]
-
 export default function Home() {
   const navigate = useNavigate()
-  const containerRef = useRef(null)
-  const { scrollYProgress } = useScroll({ target: containerRef })
-  const springProgress = useSpring(scrollYProgress, { stiffness: 60, damping: 20 })
+  const pageRef = useRef(null)
+  const kissRef = useRef(null)
+  const citasRef = useRef(null)
+  const [confettiFired, setConfettiFired] = useState(false)
 
-  // Texto principal se va arriba al hacer scroll
-  const heroY = useTransform(springProgress, [0, 0.35], ['0vh', '-25vh'])
-  const heroOpacity = useTransform(springProgress, [0, 0.3], [1, 0])
+  // Scroll global de la página
+  const { scrollYProgress } = useScroll({ container: pageRef })
+  const smooth = useSpring(scrollYProgress, { stiffness: 55, damping: 18 })
 
-  // CTA aparece en la parte baja del scroll
-  const ctaOpacity = useTransform(springProgress, [0.55, 0.8], [0, 1])
-  const ctaY = useTransform(springProgress, [0.55, 0.8], ['40px', '0px'])
+  // ── Sección beso: scroll local ──
+  const { scrollYProgress: kissProgress } = useScroll({
+    target: kissRef,
+    offset: ['start end', 'end start'],
+  })
+
+  // ── Disparar confeti cuando citasRef entra en viewport ──
+  useEffect(() => {
+    if (!citasRef.current) return
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting && !confettiFired) setConfettiFired(true) },
+      { threshold: 0.3 }
+    )
+    obs.observe(citasRef.current)
+    return () => obs.disconnect()
+  }, [confettiFired])
 
   return (
-    <div className={styles.page} ref={containerRef}>
+    <div className={styles.page} ref={pageRef}>
 
-      {/* ── Fondo leopardo fijo ── */}
-      <div className={styles.leopardBg} aria-hidden />
-      <div className={styles.bgOverlay} aria-hidden />
+      {/* ════════════════════════════════
+          SECCIÓN 1 — HERO
+      ════════════════════════════════ */}
+      <HeroSection />
 
-      {/* ── Fotos flotantes con scroll parallax ── */}
-      {PHOTOS.map((photo, i) => (
-        <FloatingPhoto
-          key={i}
-          photo={photo}
-          config={PHOTO_CONFIGS[i]}
-          scrollProgress={springProgress}
-          index={i}
-          total={PHOTOS.length}
-        />
-      ))}
+      {/* ════════════════════════════════
+          SECCIÓN 2 — BESO EN SCROLL
+      ════════════════════════════════ */}
+      <section className={styles.kissSection} ref={kissRef}>
+        <KissScroll progress={kissProgress} />
+      </section>
 
-      {/* ── Hero text — sticky al centro ── */}
-      <div className={styles.heroWrap}>
-        <motion.div className={styles.hero} style={{ y: heroY, opacity: heroOpacity }}>
-          <motion.p
-            className={styles.heroEyebrow}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-          >
-            ✦ para ti ✦
-          </motion.p>
-
-          <motion.h1
-            className={styles.heroTitle}
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          >
-            HOLA,<br />
-            <span className={styles.heroItalic}>cariño</span>
-          </motion.h1>
-
-          <motion.p
-            className={styles.heroSub}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1 }}
-          >
-            Esto es nuestro
-          </motion.p>
-        </motion.div>
-      </div>
-
-      {/* ── Scroll spacer — da altura para el scroll ── */}
-      <div className={styles.scrollSpacer} />
-
-      {/* ── CTA final — aparece al final del scroll ── */}
-      <motion.div
-        className={styles.ctaSection}
-        style={{ opacity: ctaOpacity, y: ctaY }}
-      >
-        <p className={styles.ctaLabel}>¿Lista para ver qué tengo para ti?</p>
-        <motion.button
-          className={styles.ctaBtn}
-          onClick={() => navigate('/citas')}
-          whileTap={{ scale: 0.96 }}
-          whileHover={{ scale: 1.03 }}
-        >
-          Ver las citas →
-        </motion.button>
-      </motion.div>
-
-      {/* ── Scroll hint ── */}
-      <motion.div
-        className={styles.scrollHint}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.8 }}
-      >
-        <motion.span
-          animate={{ y: [0, 7, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-        >
-          ↓
-        </motion.span>
-      </motion.div>
+      {/* ════════════════════════════════
+          SECCIÓN 3 — CITAS
+      ════════════════════════════════ */}
+      <section className={styles.citasSection} ref={citasRef}>
+        {confettiFired && <LeopardConfetti />}
+        <CitasBlock onPress={() => navigate('/citas')} />
+      </section>
 
     </div>
   )
 }
 
-// ── Foto individual con parallax ─────────────────────────────────────────────
-function FloatingPhoto({ photo, config, scrollProgress, index, total }) {
-  // Cada foto tiene una velocidad de parallax diferente
-  const speed = 0.15 + index * 0.08
-  const y = useTransform(scrollProgress, [0, 1], ['0px', `${-300 * speed}px`])
+/* ══════════════════════════════════════════════════════
+   HERO — Título enorme + fotos laterales
+══════════════════════════════════════════════════════ */
+function HeroSection() {
+  return (
+    <section className={styles.hero}>
 
-  // Aparece escalonada al inicio
-  const appear = useTransform(
-    scrollProgress,
-    [index * 0.05, index * 0.05 + 0.15],
-    [0, 1]
+      {/* Fondo leopardo */}
+      <div className={styles.leopardBg} aria-hidden />
+      <div className={styles.heroOverlay} aria-hidden />
+
+      {/* Fotos laterales */}
+      <motion.div
+        className={`${styles.heroPhoto} ${styles.heroPhotoLeft}`}
+        initial={{ x: -80, opacity: 0, rotate: -8 }}
+        animate={{ x: 0, opacity: 1, rotate: -6 }}
+        transition={{ duration: 1.1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <img src="/photos/girl1.png" alt="placeholder 1" draggable={false} />
+      </motion.div>
+
+      <motion.div
+        className={`${styles.heroPhoto} ${styles.heroPhotoRight}`}
+        initial={{ x: 80, opacity: 0, rotate: 8 }}
+        animate={{ x: 0, opacity: 1, rotate: 6 }}
+        transition={{ duration: 1.1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <img src="/photos/girl2.png" alt="placeholder 2" draggable={false} />
+      </motion.div>
+
+      {/* Título central */}
+      <div className={styles.heroCenter}>
+        <motion.p
+          className={styles.heroEyebrow}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+        >
+          solo para ti
+        </motion.p>
+
+        <motion.h1
+          className={styles.heroTitle}
+          initial={{ opacity: 0, y: 40, scaleX: 0.9 }}
+          animate={{ opacity: 1, y: 0, scaleX: 1 }}
+          transition={{ duration: 0.9, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
+        >
+          BONDIA
+        </motion.h1>
+        <motion.h1
+          className={`${styles.heroTitle} ${styles.heroTitleAccent}`}
+          initial={{ opacity: 0, y: 40, scaleX: 0.9 }}
+          animate={{ opacity: 1, y: 0, scaleX: 1 }}
+          transition={{ duration: 0.9, delay: 1.05, ease: [0.16, 1, 0.3, 1] }}
+        >
+          MI CLAU
+        </motion.h1>
+
+        <motion.p
+          className={styles.heroSub}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5 }}
+        >
+          ↓ baja ↓
+        </motion.p>
+      </div>
+
+    </section>
   )
+}
+
+/* ══════════════════════════════════════════════════════
+   BESO EN SCROLL — dos figuras que se inclinan y besan
+══════════════════════════════════════════════════════ */
+function KissScroll({ progress }) {
+  // Figura izquierda: rota de -15° a +12° (se inclina hacia la derecha/beso)
+  const rotateLeft  = useTransform(progress, [0.1, 0.7], [-15, 12])
+  const xLeft       = useTransform(progress, [0.1, 0.7], ['-8vw', '12vw'])
+  const scaleLeft   = useTransform(progress, [0.1, 0.7], [0.85, 1.05])
+
+  // Figura derecha: rota de 15° a -12°
+  const rotateRight = useTransform(progress, [0.1, 0.7], [15, -12])
+  const xRight      = useTransform(progress, [0.1, 0.7], ['8vw', '-12vw'])
+  const scaleRight  = useTransform(progress, [0.1, 0.7], [0.85, 1.05])
+
+  // Label que aparece en el beso
+  const labelOpacity = useTransform(progress, [0.55, 0.75], [0, 1])
+  const labelScale   = useTransform(progress, [0.55, 0.75], [0.7, 1])
 
   return (
+    <div className={styles.kissWrap}>
+      {/* Sticky container */}
+      <div className={styles.kissSticky}>
+
+        {/* Texto de fondo */}
+        <p className={styles.kissLabel}>haz scroll</p>
+
+        {/* Figura izquierda */}
+        <motion.div
+          className={`${styles.kissFig} ${styles.kissFigLeft}`}
+          style={{ rotate: rotateLeft, x: xLeft, scale: scaleLeft }}
+        >
+          <img src="/photos/girl1.png" alt="" draggable={false} />
+        </motion.div>
+
+        {/* Figura derecha */}
+        <motion.div
+          className={`${styles.kissFig} ${styles.kissFigRight}`}
+          style={{ rotate: rotateRight, x: xRight, scale: scaleRight }}
+        >
+          <img src="/photos/girl2.png" alt="" draggable={false} />
+        </motion.div>
+
+        {/* ❤ que aparece cuando se "besan" */}
+        <motion.div
+          className={styles.kissHeart}
+          style={{ opacity: labelOpacity, scale: labelScale }}
+        >
+          ♥
+        </motion.div>
+
+      </div>
+    </div>
+  )
+}
+
+/* ══════════════════════════════════════════════════════
+   CITAS BLOCK
+══════════════════════════════════════════════════════ */
+function CitasBlock({ onPress }) {
+  return (
     <motion.div
-      className={styles.photoWrap}
-      style={{
-        y,
-        left: config.x,
-        top: config.top,
-        rotate: config.rotate,
-        scale: config.scale,
-        opacity: appear,
-        zIndex: index % 2 === 0 ? 2 : 3,
-      }}
-      initial={{ opacity: 0, y: 60 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1.1, delay: 0.4 + config.delay, ease: [0.16, 1, 0.3, 1] }}
+      className={styles.citasInner}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
     >
-      <img
-        src={photo.src}
-        alt={photo.alt}
-        className={styles.photoImg}
-        draggable={false}
-      />
-      {/* Sombra suave bajo cada foto */}
-      <div className={styles.photoShadow} />
+      <p className={styles.citasEyebrow}>✦ tengo algo para ti ✦</p>
+
+      <h2 className={styles.citasTitle}>CITAS</h2>
+
+      <p className={styles.citasDesc}>
+        Planes para nosotras.<br />Elige dónde vamos este domingo.
+      </p>
+
+      <motion.button
+        className={styles.citasBtn}
+        onClick={onPress}
+        whileTap={{ scale: 0.95 }}
+        whileHover={{ scale: 1.04 }}
+      >
+        VER LAS OPCIONES →
+      </motion.button>
     </motion.div>
+  )
+}
+
+/* ══════════════════════════════════════════════════════
+   CONFETI LEOPARDO
+══════════════════════════════════════════════════════ */
+const CONF_COLORS = ['#3d2408', '#f5e642', '#0a0806', '#c9a96e', '#f0147a', '#f76b1c']
+
+function LeopardConfetti() {
+  const pieces = Array.from({ length: 60 }, (_, i) => ({
+    id: i,
+    x: Math.random() * 100,
+    delay: Math.random() * 1.0,
+    dur: Math.random() * 2.5 + 2,
+    size: Math.random() * 10 + 5,
+    drift: (Math.random() - 0.5) * 200,
+    spin: (Math.random() - 0.5) * 720,
+    color: CONF_COLORS[i % CONF_COLORS.length],
+    isRound: i % 4 === 0,
+    // Mancha leopardo: elipse irregular
+    rx: Math.random() * 8 + 4,
+    ry: Math.random() * 5 + 3,
+  }))
+
+  return (
+    <div className={styles.confettiWrap} aria-hidden>
+      {pieces.map((p) => (
+        <motion.div
+          key={p.id}
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: `${p.x}%`,
+            width: p.isRound ? p.size : p.rx * 2,
+            height: p.isRound ? p.size : p.ry * 2,
+            background: p.color,
+            borderRadius: p.isRound ? '50%' : `${p.rx}px ${p.ry}px`,
+            opacity: 0,
+          }}
+          animate={{
+            y: ['0px', '110vh'],
+            x: [0, p.drift],
+            rotate: [0, p.spin],
+            opacity: [0, 1, 1, 0],
+          }}
+          transition={{
+            duration: p.dur,
+            delay: p.delay,
+            ease: 'easeIn',
+          }}
+        />
+      ))}
+    </div>
   )
 }

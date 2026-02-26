@@ -1,253 +1,334 @@
-/* ═══════════════════════════════════════════════════
-   HOME — Animal print, fotos flotantes, scroll largo
-═══════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════
+   HOME — Bold, Animal Print, Fucsia, Naranja
+═══════════════════════════════════════════ */
 
 .page {
+  background: var(--black);
+  overflow-x: hidden;
+}
+
+/* ─────────────────────────────────────────
+   HERO
+───────────────────────────────────────── */
+.hero {
   position: relative;
-  min-height: 300vh;         /* scroll largo */
-  background: #0e0b08;
-  overflow: hidden;
-}
-
-/* ── Fondo leopardo ── */
-.leopardBg {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  background-color: #1a1208;
-  /* Patrón leopardo con radial-gradients apilados */
-  background-image:
-    /* Manchas grandes */
-    radial-gradient(ellipse 28px 20px at 12% 8%,  #2a1f0e 60%, transparent 70%),
-    radial-gradient(ellipse 18px 25px at 18% 12%, #3a2a10 55%, transparent 68%),
-    radial-gradient(ellipse 22px 16px at 8%  18%, #2a1f0e 60%, transparent 70%),
-
-    radial-gradient(ellipse 30px 22px at 38% 5%,  #2a1f0e 58%, transparent 70%),
-    radial-gradient(ellipse 16px 24px at 44% 10%, #3a2a10 55%, transparent 68%),
-    radial-gradient(ellipse 20px 14px at 32% 14%, #2a1f0e 60%, transparent 70%),
-
-    radial-gradient(ellipse 26px 18px at 65% 7%,  #2a1f0e 60%, transparent 70%),
-    radial-gradient(ellipse 20px 28px at 72% 12%, #3a2a10 55%, transparent 68%),
-    radial-gradient(ellipse 18px 14px at 60% 16%, #2a1f0e 60%, transparent 70%),
-
-    radial-gradient(ellipse 28px 20px at 88% 6%,  #2a1f0e 60%, transparent 70%),
-    radial-gradient(ellipse 16px 22px at 94% 11%, #3a2a10 55%, transparent 68%),
-    radial-gradient(ellipse 22px 16px at 82% 17%, #2a1f0e 60%, transparent 70%),
-
-    radial-gradient(ellipse 25px 18px at 22% 32%, #2a1f0e 58%, transparent 70%),
-    radial-gradient(ellipse 18px 26px at 28% 37%, #3a2a10 55%, transparent 68%),
-    radial-gradient(ellipse 20px 14px at 15% 40%, #2a1f0e 60%, transparent 70%),
-
-    radial-gradient(ellipse 28px 20px at 52% 28%, #2a1f0e 58%, transparent 70%),
-    radial-gradient(ellipse 20px 28px at 58% 34%, #3a2a10 55%, transparent 68%),
-    radial-gradient(ellipse 18px 14px at 46% 38%, #2a1f0e 60%, transparent 70%),
-
-    radial-gradient(ellipse 26px 18px at 78% 30%, #2a1f0e 58%, transparent 70%),
-    radial-gradient(ellipse 16px 24px at 84% 36%, #3a2a10 55%, transparent 68%),
-    radial-gradient(ellipse 22px 16px at 72% 42%, #2a1f0e 60%, transparent 70%),
-
-    radial-gradient(ellipse 28px 20px at 8%  55%, #2a1f0e 58%, transparent 70%),
-    radial-gradient(ellipse 18px 26px at 14% 60%, #3a2a10 55%, transparent 68%),
-    radial-gradient(ellipse 20px 14px at 4%  65%, #2a1f0e 60%, transparent 70%),
-
-    radial-gradient(ellipse 25px 18px at 35% 52%, #2a1f0e 58%, transparent 70%),
-    radial-gradient(ellipse 20px 28px at 42% 58%, #3a2a10 55%, transparent 68%),
-    radial-gradient(ellipse 18px 14px at 28% 63%, #2a1f0e 60%, transparent 70%),
-
-    radial-gradient(ellipse 28px 22px at 62% 50%, #2a1f0e 58%, transparent 70%),
-    radial-gradient(ellipse 16px 24px at 68% 56%, #3a2a10 55%, transparent 68%),
-    radial-gradient(ellipse 22px 16px at 55% 62%, #2a1f0e 60%, transparent 70%),
-
-    radial-gradient(ellipse 26px 18px at 88% 52%, #2a1f0e 58%, transparent 70%),
-    radial-gradient(ellipse 18px 26px at 94% 58%, #3a2a10 55%, transparent 68%),
-    radial-gradient(ellipse 20px 14px at 80% 64%, #2a1f0e 60%, transparent 70%),
-
-    radial-gradient(ellipse 28px 20px at 18% 75%, #2a1f0e 58%, transparent 70%),
-    radial-gradient(ellipse 20px 28px at 24% 81%, #3a2a10 55%, transparent 68%),
-    radial-gradient(ellipse 18px 14px at 10% 85%, #2a1f0e 60%, transparent 70%),
-
-    radial-gradient(ellipse 25px 18px at 48% 72%, #2a1f0e 58%, transparent 70%),
-    radial-gradient(ellipse 16px 24px at 54% 78%, #3a2a10 55%, transparent 68%),
-    radial-gradient(ellipse 22px 16px at 42% 84%, #2a1f0e 60%, transparent 70%),
-
-    radial-gradient(ellipse 28px 22px at 75% 74%, #2a1f0e 58%, transparent 70%),
-    radial-gradient(ellipse 18px 26px at 82% 80%, #3a2a10 55%, transparent 68%),
-    radial-gradient(ellipse 20px 14px at 68% 86%, #2a1f0e 60%, transparent 70%),
-
-    radial-gradient(ellipse 26px 18px at 92% 72%, #2a1f0e 58%, transparent 70%),
-    radial-gradient(ellipse 16px 22px at 98% 78%, #3a2a10 55%, transparent 68%),
-
-    /* Centro camel dorado base */
-    radial-gradient(ellipse 14px 10px at 15% 10%, #c9a96e22 40%, transparent 60%),
-    radial-gradient(ellipse 14px 10px at 42% 7%,  #c9a96e22 40%, transparent 60%),
-    radial-gradient(ellipse 14px 10px at 68% 9%,  #c9a96e22 40%, transparent 60%),
-    radial-gradient(ellipse 14px 10px at 90% 8%,  #c9a96e22 40%, transparent 60%),
-    radial-gradient(ellipse 14px 10px at 25% 35%, #c9a96e22 40%, transparent 60%),
-    radial-gradient(ellipse 14px 10px at 55% 30%, #c9a96e22 40%, transparent 60%),
-    radial-gradient(ellipse 14px 10px at 80% 33%, #c9a96e22 40%, transparent 60%);
-
-  background-size: 100% 100%;
-}
-
-/* Warm overlay */
-.bgOverlay {
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  background:
-    radial-gradient(ellipse at 50% 40%, rgba(201,169,110,0.06) 0%, transparent 60%),
-    linear-gradient(to bottom, rgba(14,11,8,0.3) 0%, rgba(14,11,8,0.1) 50%, rgba(14,11,8,0.6) 100%);
-}
-
-/* ── Fotos flotantes ── */
-.photoWrap {
-  position: absolute;
-  z-index: 4;
-  will-change: transform;
-  width: clamp(160px, 38vw, 260px);
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
-  transform-origin: center bottom;
-}
-
-.photoImg {
-  width: 100%;
-  height: auto;
-  display: block;
-  pointer-events: none;
-  user-select: none;
-}
-
-.photoShadow {
-  position: absolute;
-  bottom: -20px;
-  left: 10%;
-  width: 80%;
-  height: 20px;
-  background: radial-gradient(ellipse, rgba(0,0,0,0.4) 0%, transparent 70%);
-  filter: blur(8px);
-  pointer-events: none;
-}
-
-/* ── Hero ── */
-.heroWrap {
-  position: sticky;
-  top: 0;
-  height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10;
-  pointer-events: none;
+  overflow: hidden;
 }
 
-.hero {
-  text-align: center;
+/* Leopard background */
+.leopardBg {
+  position: absolute;
+  inset: 0;
+  background-color: var(--yellow);
+  background-image:
+    /* Manchas leopardo oscuras */
+    radial-gradient(ellipse 32px 22px at 8%   6%,  #3d2408 55%, transparent 68%),
+    radial-gradient(ellipse 20px 28px at 14%  11%, #2a1605 50%, transparent 65%),
+    radial-gradient(ellipse 24px 16px at 5%   18%, #3d2408 55%, transparent 68%),
+
+    radial-gradient(ellipse 34px 24px at 34%  4%,  #3d2408 55%, transparent 68%),
+    radial-gradient(ellipse 18px 26px at 40%  9%,  #2a1605 50%, transparent 65%),
+    radial-gradient(ellipse 22px 16px at 28%  15%, #3d2408 55%, transparent 68%),
+
+    radial-gradient(ellipse 28px 20px at 62%  5%,  #3d2408 55%, transparent 68%),
+    radial-gradient(ellipse 22px 30px at 70%  10%, #2a1605 50%, transparent 65%),
+    radial-gradient(ellipse 18px 14px at 56%  17%, #3d2408 55%, transparent 68%),
+
+    radial-gradient(ellipse 30px 22px at 86%  4%,  #3d2408 55%, transparent 68%),
+    radial-gradient(ellipse 16px 24px at 93%  9%,  #2a1605 50%, transparent 65%),
+    radial-gradient(ellipse 24px 16px at 80%  16%, #3d2408 55%, transparent 68%),
+
+    radial-gradient(ellipse 28px 20px at 18%  30%, #3d2408 55%, transparent 68%),
+    radial-gradient(ellipse 20px 28px at 24%  36%, #2a1605 50%, transparent 65%),
+    radial-gradient(ellipse 22px 14px at 11%  42%, #3d2408 55%, transparent 68%),
+
+    radial-gradient(ellipse 32px 22px at 48%  28%, #3d2408 55%, transparent 68%),
+    radial-gradient(ellipse 18px 26px at 54%  34%, #2a1605 50%, transparent 65%),
+    radial-gradient(ellipse 24px 16px at 42%  40%, #3d2408 55%, transparent 68%),
+
+    radial-gradient(ellipse 28px 20px at 76%  29%, #3d2408 55%, transparent 68%),
+    radial-gradient(ellipse 16px 24px at 83%  35%, #2a1605 50%, transparent 65%),
+    radial-gradient(ellipse 22px 16px at 70%  42%, #3d2408 55%, transparent 68%),
+
+    radial-gradient(ellipse 30px 20px at 6%   55%, #3d2408 55%, transparent 68%),
+    radial-gradient(ellipse 18px 26px at 12%  61%, #2a1605 50%, transparent 65%),
+    radial-gradient(ellipse 22px 14px at 2%   67%, #3d2408 55%, transparent 68%),
+
+    radial-gradient(ellipse 28px 22px at 36%  52%, #3d2408 55%, transparent 68%),
+    radial-gradient(ellipse 20px 28px at 43%  58%, #2a1605 50%, transparent 65%),
+    radial-gradient(ellipse 18px 14px at 29%  64%, #3d2408 55%, transparent 68%),
+
+    radial-gradient(ellipse 32px 22px at 64%  50%, #3d2408 55%, transparent 68%),
+    radial-gradient(ellipse 16px 24px at 70%  56%, #2a1605 50%, transparent 65%),
+    radial-gradient(ellipse 24px 16px at 57%  63%, #3d2408 55%, transparent 68%),
+
+    radial-gradient(ellipse 28px 20px at 88%  52%, #3d2408 55%, transparent 68%),
+    radial-gradient(ellipse 18px 26px at 95%  58%, #2a1605 50%, transparent 65%),
+    radial-gradient(ellipse 22px 16px at 81%  65%, #3d2408 55%, transparent 68%),
+
+    radial-gradient(ellipse 30px 20px at 16%  75%, #3d2408 55%, transparent 68%),
+    radial-gradient(ellipse 20px 28px at 22%  81%, #2a1605 50%, transparent 65%),
+    radial-gradient(ellipse 18px 14px at 8%   87%, #3d2408 55%, transparent 68%),
+
+    radial-gradient(ellipse 28px 22px at 46%  72%, #3d2408 55%, transparent 68%),
+    radial-gradient(ellipse 16px 24px at 52%  78%, #2a1605 50%, transparent 65%),
+    radial-gradient(ellipse 24px 14px at 40%  85%, #3d2408 55%, transparent 68%),
+
+    radial-gradient(ellipse 30px 20px at 74%  74%, #3d2408 55%, transparent 68%),
+    radial-gradient(ellipse 18px 26px at 81%  80%, #2a1605 50%, transparent 65%),
+    radial-gradient(ellipse 22px 14px at 68%  86%, #3d2408 55%, transparent 68%),
+
+    radial-gradient(ellipse 28px 22px at 92%  72%, #3d2408 55%, transparent 68%),
+    radial-gradient(ellipse 16px 22px at 98%  78%, #2a1605 50%, transparent 65%);
+}
+
+/* Overlay degradado para que el texto sea legible */
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10,8,6,0.08) 0%,
+    rgba(10,8,6,0.0) 30%,
+    rgba(10,8,6,0.0) 70%,
+    rgba(10,8,6,0.45) 100%
+  );
+}
+
+/* Fotos laterales */
+.heroPhoto {
+  position: absolute;
+  bottom: 0;
+  z-index: 3;
+  width: clamp(130px, 34vw, 200px);
+  filter: drop-shadow(4px 0 0 var(--black)) drop-shadow(-4px 0 0 var(--black));
+}
+.heroPhotoLeft  { left: -2vw; transform-origin: bottom left; }
+.heroPhotoRight { right: -2vw; transform-origin: bottom right; }
+.heroPhoto img { width: 100%; height: auto; pointer-events: none; user-select: none; }
+
+/* Centro */
+.heroCenter {
+  position: relative;
+  z-index: 5;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
-  will-change: transform, opacity;
-  padding: 0 1.5rem;
+  text-align: center;
+  gap: 0;
+  padding: 0 1rem;
 }
 
 .heroEyebrow {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.65rem;
-  font-weight: 400;
-  letter-spacing: 0.35em;
+  font-weight: 500;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: #c9a96e;
-  margin-bottom: 0.5rem;
+  color: var(--brown);
+  margin-bottom: 0.4rem;
 }
 
 .heroTitle {
-  font-family: 'Cormorant', 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(4.5rem, 24vw, 7rem);
-  font-weight: 700;
-  line-height: 0.88;
-  color: #f5ede0;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  /* Leopard-inspired text shadow */
-  text-shadow:
-    3px 3px 0px rgba(42,31,14,0.8),
-    6px 6px 20px rgba(0,0,0,0.5);
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 26vw, 8rem);
+  line-height: 0.85;
+  color: var(--black);
+  letter-spacing: 0.02em;
+  /* Stroke outline */
+  -webkit-text-stroke: 2px var(--black);
+  text-shadow: 4px 4px 0 rgba(61,36,8,0.35);
 }
 
-.heroItalic {
-  display: block;
-  font-weight: 300;
-  font-style: italic;
-  font-size: 0.75em;
-  text-transform: none;
-  color: #c9a96e;
-  letter-spacing: 0.06em;
-  text-shadow: 2px 2px 12px rgba(0,0,0,0.4);
+.heroTitleAccent {
+  color: var(--fucsia);
+  -webkit-text-stroke: 2px var(--brown);
+  text-shadow: 4px 4px 0 rgba(61,36,8,0.4), 8px 8px 0 rgba(240,20,122,0.2);
 }
 
 .heroSub {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 300;
-  letter-spacing: 0.2em;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: rgba(245,237,224,0.5);
-  margin-top: 0.5rem;
+  color: var(--brown);
+  margin-top: 1.8rem;
+  animation: bounce 2s infinite ease-in-out;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
 }
 
-/* ── Spacer para el scroll ── */
-.scrollSpacer {
-  height: 160vh;
-  pointer-events: none;
+/* ─────────────────────────────────────────
+   BESO EN SCROLL
+───────────────────────────────────────── */
+.kissSection {
+  height: 240vh;   /* altura del scroll para la animación */
+  background: var(--black);
+  position: relative;
 }
 
-/* ── CTA final ── */
-.ctaSection {
+.kissWrap {
+  position: relative;
+  height: 100%;
+}
+
+.kissSticky {
   position: sticky;
+  top: 0;
+  height: 100dvh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 6vh;
+  overflow: hidden;
+  background: var(--black);
+}
+
+/* Texto fondo */
+.kissLabel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 14vw, 5rem);
+  letter-spacing: 0.12em;
+  color: rgba(245,230,66,0.06);
+  text-transform: uppercase;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Figuras */
+.kissFig {
+  position: absolute;
   bottom: 0;
-  z-index: 20;
+  width: clamp(140px, 38vw, 220px);
+  transform-origin: bottom center;
+  will-change: transform;
+  filter: drop-shadow(0 -8px 30px rgba(240,20,122,0.15));
+}
+.kissFigLeft  { left: 0; }
+.kissFigRight { right: 0; }
+.kissFig img  { width: 100%; height: auto; pointer-events: none; user-select: none; }
+
+/* Corazón del beso */
+.kissHeart {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(3rem, 16vw, 6rem);
+  color: var(--fucsia);
+  text-shadow: 0 0 40px rgba(240,20,122,0.8), 0 0 80px rgba(240,20,122,0.4);
+  pointer-events: none;
+  will-change: opacity, transform;
+  z-index: 10;
+}
+
+/* ─────────────────────────────────────────
+   SECCIÓN CITAS
+───────────────────────────────────────── */
+.citasSection {
+  position: relative;
+  min-height: 80dvh;
+  background: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 4rem 1.5rem calc(4rem + var(--safe-bottom));
+}
+
+/* Fondo leopardo oscuro */
+.citasSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #0f0b07;
+  background-image:
+    radial-gradient(ellipse 28px 20px at 10%  10%, #2a1605 55%, transparent 68%),
+    radial-gradient(ellipse 20px 26px at 30%  20%, #1a0e03 50%, transparent 65%),
+    radial-gradient(ellipse 24px 16px at 60%  8%,  #2a1605 55%, transparent 68%),
+    radial-gradient(ellipse 28px 20px at 85%  15%, #1a0e03 50%, transparent 65%),
+    radial-gradient(ellipse 22px 18px at 20%  55%, #2a1605 55%, transparent 68%),
+    radial-gradient(ellipse 26px 20px at 50%  45%, #1a0e03 50%, transparent 65%),
+    radial-gradient(ellipse 20px 24px at 75%  60%, #2a1605 55%, transparent 68%),
+    radial-gradient(ellipse 24px 16px at 35%  80%, #1a0e03 50%, transparent 65%),
+    radial-gradient(ellipse 28px 20px at 65%  85%, #2a1605 55%, transparent 68%),
+    radial-gradient(ellipse 20px 26px at 90%  75%, #1a0e03 50%, transparent 65%);
+  opacity: 0.9;
+}
+
+/* Confeti */
+.confettiWrap {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+}
+
+/* Contenido citas */
+.citasInner {
+  position: relative;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.2rem;
-  padding: 3rem 1.5rem calc(3rem + var(--safe-bottom));
-  background: linear-gradient(to top, rgba(14,11,8,0.98) 60%, transparent);
-  will-change: transform, opacity;
-}
-
-.ctaLabel {
-  font-family: 'Cormorant', 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.3rem;
-  font-style: italic;
-  font-weight: 300;
-  color: rgba(245,237,224,0.75);
   text-align: center;
-  line-height: 1.3;
+  gap: 1.2rem;
+  max-width: var(--max-w);
+  width: 100%;
 }
 
-.ctaBtn {
-  background: #c9a96e;
-  color: #0e0b08;
-  padding: 1rem 2.4rem;
-  border-radius: 4px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
+.citasEyebrow {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-  transition: background 0.2s, transform 0.15s;
-  box-shadow: 0 4px 20px rgba(201,169,110,0.35);
+  color: var(--camel);
 }
-.ctaBtn:hover { background: #ddbf85; }
 
-/* ── Scroll hint ── */
-.scrollHint {
-  position: fixed;
-  bottom: 1.8rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 30;
-  font-size: 1.2rem;
-  color: rgba(201,169,110,0.6);
-  pointer-events: none;
+.citasTitle {
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 32vw, 10rem);
+  line-height: 0.85;
+  color: var(--yellow);
+  letter-spacing: 0.04em;
+  text-shadow:
+    4px 4px 0 var(--brown),
+    8px 8px 0 rgba(61,36,8,0.4);
+  -webkit-text-stroke: 2px var(--brown);
 }
+
+.citasDesc {
+  font-family: var(--font-italic);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: rgba(250,246,238,0.7);
+  line-height: 1.5;
+}
+
+.citasBtn {
+  background: var(--fucsia);
+  color: white;
+  padding: 1.1rem 2.5rem;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  box-shadow: 4px 4px 0 var(--brown), 0 8px 30px rgba(240,20,122,0.4);
+  transition: background 0.15s;
+}
+.citasBtn:hover { background: #ff2d8a; }

@@ -1,15 +1,14 @@
 .page {
   min-height: 100dvh;
-  background: var(--paper);
+  background: var(--black);
 }
-
 .inner {
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 0 0 calc(3rem + var(--safe-bottom));
 }
 
-/* ── Header ── */
+/* Header */
 .header {
   padding: 2.2rem 1.5rem 0;
   display: flex;
@@ -17,21 +16,20 @@
   gap: 0.8rem;
   margin-bottom: 0;
 }
-
 .back {
   font-family: var(--font-body);
   font-size: 0.65rem;
-  font-weight: 400;
-  letter-spacing: 0.15em;
+  font-weight: 500;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--ink-4);
+  color: var(--camel);
   padding: 0;
   align-self: flex-start;
   transition: color 0.2s;
 }
-.back:hover { color: var(--ink); }
+.back:hover { color: var(--yellow); }
 
-.headerRule { height: 1px; background: var(--ink); }
+.headerRule { height: 2px; background: var(--yellow); }
 
 .headerBottom {
   display: flex;
@@ -39,31 +37,27 @@
   justify-content: space-between;
   padding: 0.5rem 0 0;
 }
-
 .title {
   font-family: var(--font-display);
-  font-size: 3rem;
-  font-weight: 300;
-  font-style: italic;
-  color: var(--ink);
-  letter-spacing: -0.02em;
+  font-size: 4rem;
+  color: var(--yellow);
+  letter-spacing: 0.04em;
   line-height: 1;
+  -webkit-text-stroke: 1px var(--brown);
+  text-shadow: 3px 3px 0 var(--brown);
 }
-
 .count {
   font-family: var(--font-body);
   font-size: 0.7rem;
   font-weight: 300;
-  color: var(--ink-4);
+  color: var(--camel);
   letter-spacing: 0.1em;
 }
 
-/* ── List ── */
-.list {
-  margin-top: 1.5rem;
-}
+/* List */
+.list { margin-top: 1.5rem; }
 
-/* ── Row ── */
+/* Row */
 .row {
   width: 100%;
   display: flex;
@@ -72,49 +66,34 @@
   padding: 1.4rem 1.5rem;
   text-align: left;
   background: transparent;
-  border-bottom: 1px solid var(--paper-3);
+  border-bottom: 1px solid rgba(201,169,110,0.15);
   transition: background 0.15s;
   position: relative;
 }
-.row:first-child { border-top: 1px solid var(--paper-3); }
-.row:hover { background: var(--paper-2); }
+.row:first-child { border-top: 1px solid rgba(201,169,110,0.15); }
+.row:hover { background: rgba(245,230,66,0.04); }
 
 .rowNum {
   font-family: var(--font-display);
-  font-size: 0.75rem;
-  font-weight: 300;
-  color: var(--ink-4);
-  letter-spacing: 0.05em;
-  padding-top: 0.15rem;
+  font-size: 1.2rem;
+  color: rgba(201,169,110,0.4);
   flex-shrink: 0;
-  min-width: 1.8rem;
+  min-width: 2rem;
+  padding-top: 0.1rem;
 }
-
-.rowContent {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.rowTop {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
+.rowContent { flex: 1; display: flex; flex-direction: column; gap: 0.3rem; }
+.rowTop { display: flex; align-items: center; gap: 0.6rem; }
 .rowDate {
   font-family: var(--font-body);
   font-size: 0.65rem;
   font-weight: 400;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--ink-4);
+  color: var(--camel);
 }
-
 .rowBadge {
-  background: var(--blush-light);
-  color: var(--blush-deep);
+  background: rgba(240,20,122,0.15);
+  color: var(--fucsia);
   font-family: var(--font-body);
   font-size: 0.58rem;
   font-weight: 500;
@@ -122,32 +101,27 @@
   text-transform: uppercase;
   padding: 0.18rem 0.55rem;
   border-radius: 50px;
+  border: 1px solid rgba(240,20,122,0.3);
 }
-
 .rowTitle {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: var(--ink);
-  line-height: 1.1;
+  font-size: 2rem;
+  color: var(--offwhite);
+  line-height: 1;
+  letter-spacing: 0.02em;
 }
-
 .rowDesc {
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 300;
-  color: var(--ink-3);
+  color: rgba(250,246,238,0.5);
   line-height: 1.5;
 }
-
 .rowArrow {
   font-size: 1.1rem;
-  color: var(--ink-4);
+  color: var(--camel);
   transition: transform 0.2s, color 0.2s;
   padding-top: 0.2rem;
   flex-shrink: 0;
 }
-.row:hover .rowArrow {
-  transform: translateX(4px);
-  color: var(--ink);
-}
+.row:hover .rowArrow { transform: translateX(4px); color: var(--yellow); }

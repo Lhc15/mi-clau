@@ -1,104 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Cormorant:ital,wght@1,300;1,400&display=swap');
 
 /* ─────────────────────────────────────────────
    DESIGN SYSTEM — para-ti
-   Editorial · White · Vogue-inspired
+   Bold · Animal Print · Fucsia · Naranja
 ───────────────────────────────────────────── */
 
 :root {
-  /* Palette — light editorial */
-  --white:        #ffffff;
-  --paper:        #faf8f5;
-  --paper-2:      #f4f1ec;
-  --paper-3:      #ede8e0;
-  --ink:          #1a1714;
-  --ink-2:        #3d3830;
-  --ink-3:        #6e6558;
-  --ink-4:        #a09890;
+  /* Palette */
+  --yellow:       #f5e642;
+  --fucsia:       #f0147a;
+  --orange:       #f76b1c;
+  --teal:         #00c9b1;
+  --black:        #0a0806;
+  --offwhite:     #faf6ee;
+  --camel:        #c9a96e;
+  --brown:        #3d2408;
 
-  /* Accents */
-  --blush:        #e8a4a0;
-  --blush-light:  #f5d5d3;
-  --blush-deep:   #c4706a;
-  --rose:         #d4606a;
-  --tinder-red:   #ff4458;
-  --tinder-green: #4cde7c;
-  --gold:         #c9a96e;
-  --gold-light:   #edddb8;
+  /* Leopard confetti colors */
+  --conf-1: #3d2408;
+  --conf-2: #f5e642;
+  --conf-3: #0a0806;
+  --conf-4: #c9a96e;
+  --conf-5: #f0147a;
 
   /* Typography */
-  --font-display: 'Cormorant', 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Bebas Neue', 'Anton', Impact, sans-serif;
+  --font-italic:  'Cormorant', Georgia, serif;
   --font-body:    'DM Sans', system-ui, sans-serif;
 
   /* Layout */
   --max-w:        430px;
   --safe-bottom:  env(safe-area-inset-bottom, 16px);
-
-  /* Shadows */
-  --shadow-sm:    0 1px 3px rgba(26,23,20,0.08), 0 1px 2px rgba(26,23,20,0.04);
-  --shadow-md:    0 4px 16px rgba(26,23,20,0.10), 0 2px 6px rgba(26,23,20,0.06);
-  --shadow-lg:    0 12px 40px rgba(26,23,20,0.14), 0 4px 12px rgba(26,23,20,0.08);
-  --shadow-card:  0 20px 60px rgba(26,23,20,0.16), 0 8px 20px rgba(26,23,20,0.10);
-
-  /* Easing */
-  --ease-spring:  cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-smooth:  cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ─── Reset ─── */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-tap-highlight-color: transparent;
-}
-
-html {
-  font-size: 16px;
-  -webkit-text-size-adjust: 100%;
-  height: 100%;
-}
-
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; height: 100%; }
 body {
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--black);
+  color: var(--offwhite);
   font-family: var(--font-body);
   font-weight: 300;
   line-height: 1.6;
   min-height: 100dvh;
-  min-height: -webkit-fill-available;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
-
-#root {
-  min-height: 100dvh;
-  min-height: -webkit-fill-available;
-}
-
+#root { min-height: 100dvh; }
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; border: none; background: none; cursor: pointer; }
 img { display: block; max-width: 100%; }
-
-/* ─── Scrollbar ─── */
-::-webkit-scrollbar { width: 2px; }
-::-webkit-scrollbar-track { background: var(--paper-2); }
-::-webkit-scrollbar-thumb { background: var(--ink-4); border-radius: 2px; }
-
-/* ─── Selection ─── */
-::selection { background: var(--blush-light); color: var(--ink); }
-
-/* ─── Focus visible ─── */
-:focus-visible {
-  outline: 2px solid var(--blush-deep);
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
-/* ─── Utility ─── */
-.visually-hidden {
-  position: absolute; width: 1px; height: 1px;
-  padding: 0; margin: -1px; overflow: hidden;
-  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
-}
+::selection { background: var(--fucsia); color: white; }
