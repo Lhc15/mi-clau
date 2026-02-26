@@ -5,7 +5,6 @@
   background-image:
     radial-gradient(ellipse 9px 7px at  7%  4%,  #2a1a6e 100%, transparent 0),
     radial-gradient(ellipse 6px 9px at 12%  8%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 8px 5px at  4% 14%,  #2a1a6e 100%, transparent 0),
     radial-gradient(ellipse 10px 7px at 26%  3%,  #2a1a6e 100%, transparent 0),
     radial-gradient(ellipse 6px 10px at 31%  9%,  #1a1050 100%, transparent 0),
     radial-gradient(ellipse 9px 6px at 48%  5%,  #2a1a6e 100%, transparent 0),
@@ -13,33 +12,26 @@
     radial-gradient(ellipse 10px 7px at 70%  4%,  #2a1a6e 100%, transparent 0),
     radial-gradient(ellipse 6px 9px at 76%  9%,  #1a1050 100%, transparent 0),
     radial-gradient(ellipse 9px 7px at 90%  3%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 14px 10px at 18% 22%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 9px 14px at 25% 30%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 12px 8px at  8% 38%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 14px 10px at 45% 25%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 12px 9px at 18% 22%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 8px 13px at 25% 30%,  #1a1050 100%, transparent 0),
+    radial-gradient(ellipse 12px 8px at 45% 25%,  #2a1a6e 100%, transparent 0),
     radial-gradient(ellipse 9px 13px at 52% 32%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 13px 9px at 35% 40%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 12px 9px at 68% 22%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 11px 8px at 68% 22%,  #2a1a6e 100%, transparent 0),
     radial-gradient(ellipse 8px 13px at 75% 30%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 11px 7px at 58% 38%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 13px 9px at 88% 24%,  #2a1a6e 100%, transparent 0),
+    radial-gradient(ellipse 12px 9px at 88% 24%,  #2a1a6e 100%, transparent 0),
     radial-gradient(ellipse 9px 7px at  5% 55%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 7px 10px at 11% 62%,  #1a1050 100%, transparent 0),
     radial-gradient(ellipse 11px 8px at 30% 52%,  #2a1a6e 100%, transparent 0),
     radial-gradient(ellipse 8px 12px at 37% 60%,  #1a1050 100%, transparent 0),
     radial-gradient(ellipse 10px 7px at 55% 54%,  #2a1a6e 100%, transparent 0),
     radial-gradient(ellipse 7px 11px at 62% 61%,  #1a1050 100%, transparent 0),
     radial-gradient(ellipse 12px 8px at 78% 53%,  #2a1a6e 100%, transparent 0),
     radial-gradient(ellipse 8px 12px at 85% 61%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 10px 7px at 94% 56%,  #2a1a6e 100%, transparent 0),
     radial-gradient(ellipse 9px 7px at 15% 75%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 7px 10px at 22% 82%,  #1a1050 100%, transparent 0),
     radial-gradient(ellipse 11px 8px at 42% 73%,  #2a1a6e 100%, transparent 0),
     radial-gradient(ellipse 8px 12px at 49% 80%,  #1a1050 100%, transparent 0),
     radial-gradient(ellipse 12px 8px at 65% 75%,  #2a1a6e 100%, transparent 0),
     radial-gradient(ellipse 9px 13px at 72% 82%,  #1a1050 100%, transparent 0),
-    radial-gradient(ellipse 10px 7px at 88% 76%,  #2a1a6e 100%, transparent 0),
-    radial-gradient(ellipse 7px 10px at 95% 83%,  #1a1050 100%, transparent 0);
+    radial-gradient(ellipse 10px 7px at 88% 76%,  #2a1a6e 100%, transparent 0);
   position: relative;
   overflow: hidden;
 }
@@ -54,269 +46,192 @@
 
 /* ── Header ── */
 .header {
-  padding: 2rem 1.5rem 1.5rem;
-  background: rgba(232,245,208,0.9);
-  margin: 0.8rem;
+  padding: 2rem 1.4rem 1.4rem;
+  background: rgba(210,240,160,0.95);
+  margin: 0.8rem 0.8rem 1rem;
   border-radius: 16px;
-  border: 1.5px solid rgba(68,85,238,0.15);
+  border: 2px solid rgba(68,85,238,0.2);
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
-  margin-bottom: 1rem;
+  gap: 0.35rem;
 }
 
 .back {
   font-family: var(--font-body);
   font-size: 0.65rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--blue);
+  color: #4455ee;
   padding: 0;
   align-self: flex-start;
-  margin-bottom: 0.3rem;
-  transition: opacity 0.2s;
+  margin-bottom: 0.2rem;
 }
 .back:hover { opacity: 0.7; }
 
-.headerRule { height: 2px; background: var(--blue); margin-bottom: 0.4rem; }
+.headerRule { height: 2px; background: #4455ee; margin-bottom: 0.3rem; }
 
 .headerDate {
-  font-family: var(--font-body);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #f0147a;
+  font-family: var(--font-body); font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase; color: #f0147a;
 }
-
 .title {
-  font-family: var(--font-display);
-  font-size: 2.5rem;
-  color: var(--black);
-  letter-spacing: 0.02em;
-  line-height: 1;
+  font-family: var(--font-display); font-size: 2.4rem; color: #111; line-height: 1; letter-spacing: 0.02em;
 }
-
 .desc {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 400;
-  color: rgba(17,17,17,0.65);
-  line-height: 1.55;
+  font-family: var(--font-body); font-size: 0.85rem; font-weight: 400;
+  color: rgba(17,17,17,0.75); line-height: 1.55;
 }
 
-/* ── Chosen banner ── */
-.chosenBanner { margin: 0 0.8rem 0.8rem; overflow: hidden; }
-.chosenInner {
-  display: flex; align-items: center; gap: 0.8rem;
-  background: rgba(232,245,208,0.92);
-  border: 1.5px solid rgba(68,85,238,0.25);
-  border-radius: 12px; padding: 0.9rem 1rem;
+/* ── Voted banner ── */
+.votedBanner {
+  display: flex; align-items: center; gap: 0.6rem;
+  margin: 0 0.8rem 0.5rem;
+  padding: 0.7rem 1rem;
+  background: rgba(240,20,122,0.1);
+  border: 1.5px solid rgba(240,20,122,0.3);
+  border-radius: 10px;
 }
-.chosenEmoji { font-size: 1.6rem; flex-shrink: 0; }
-.chosenLabel {
-  font-family: var(--font-body); font-size: 0.6rem; font-weight: 600;
-  letter-spacing: 0.15em; text-transform: uppercase; color: #f0147a; line-height: 1;
+.votedBannerEmoji { font-size: 1.2rem; color: #f0147a; }
+.votedBannerLabel {
+  font-family: var(--font-body); font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase; color: #f0147a; flex: 1;
 }
-.chosenName { font-family: var(--font-display); font-size: 1.2rem; color: var(--black); letter-spacing: 0.02em; }
 .chosenChange {
-  margin-left: auto; font-family: var(--font-body); font-size: 0.68rem; font-weight: 600;
-  letter-spacing: 0.08em; color: var(--blue); text-decoration: underline; text-underline-offset: 2px;
-  flex-shrink: 0; transition: opacity 0.2s;
+  font-family: var(--font-body); font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.08em; color: #4455ee; text-decoration: underline;
+  text-underline-offset: 2px;
 }
 .chosenChange:hover { opacity: 0.7; }
 
 /* ── Deck meta ── */
 .deckMeta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1.3rem;
-  margin-bottom: 0.8rem;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 1.2rem; margin-bottom: 0.6rem;
 }
 .deckLabel {
-  font-family: var(--font-body);
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(17,17,17,0.5);
+  font-family: var(--font-body); font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase; color: rgba(17,17,17,0.55);
 }
 .deckCounter {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  color: var(--blue);
-  letter-spacing: 0.05em;
+  font-family: var(--font-display); font-size: 1rem; color: #4455ee; letter-spacing: 0.05em;
 }
 
-/* ── CARD DECK ── */
+/* ── DECK wrapper ── */
 .deck {
   position: relative;
   margin: 0 1rem;
-  /* Height = card height + peek space */
-  height: 520px;
+  /* enough height for card + peek of cards below */
+  padding-bottom: 40px;
 }
 
-/* Peeking cards behind */
-.cardPeek {
-  position: absolute;
-  left: 0; right: 0;
-  height: 480px;
-  border-radius: 20px;
-  pointer-events: none;
-}
-
-/* Active card */
-.card {
+/* Cartas de detrás — posición absoluta bajo la carta activa */
+.cardBehind {
   position: absolute;
   left: 0; right: 0;
   top: 0;
+  height: 100%;
+  min-height: 430px;
+  border-radius: 20px;
+  pointer-events: none;
+  transform-origin: bottom center;
+  box-shadow: 0 4px 16px rgba(17,17,17,0.2);
+}
+
+/* Carta activa — encima de todo */
+.cardActive {
+  position: relative;
+  z-index: 30;
+}
+
+/* ── LA CARD ── */
+.card {
   background: #4455ee;
   border-radius: 20px;
   overflow: hidden;
-  z-index: 20;
-  box-shadow: 0 8px 32px rgba(68,85,238,0.35), 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 32px rgba(68,85,238,0.4), 0 2px 8px rgba(0,0,0,0.25);
 }
 
-.cardAccent {
-  height: 6px;
-  width: 100%;
-}
+.cardAccentBar { height: 5px; width: 100%; }
 
 .cardBody {
-  padding: 1.4rem 1.4rem 1.6rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+  padding: 1.3rem 1.4rem 1.5rem;
+  display: flex; flex-direction: column; gap: 0.75rem;
 }
 
-.cardTop {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.8rem;
-}
-.cardEmoji { font-size: 2rem; flex-shrink: 0; line-height: 1; }
-
+.cardTop { display: flex; align-items: flex-start; gap: 0.7rem; }
+.cardEmoji { font-size: 1.9rem; flex-shrink: 0; line-height: 1; }
+.cardTitleWrap { flex: 1; min-width: 0; }
 .cardName {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  color: white;
-  line-height: 1;
-  letter-spacing: 0.02em;
+  font-family: var(--font-display); font-size: 1.55rem; color: white;
+  line-height: 1; letter-spacing: 0.02em;
 }
 .cardSub {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 300;
-  color: rgba(255,255,255,0.65);
-  font-style: italic;
+  font-family: var(--font-body); font-size: 0.75rem; font-weight: 300;
+  color: rgba(255,255,255,0.6); font-style: italic;
 }
 .cardPrice {
-  margin-left: auto;
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  color: #d4f060;
-  flex-shrink: 0;
-  letter-spacing: 0.02em;
+  font-family: var(--font-display); font-size: 1.1rem; color: #d4f060;
+  flex-shrink: 0; letter-spacing: 0.02em;
 }
 
 .cardTag {
   display: inline-block;
-  background: rgba(255,255,255,0.15);
-  color: rgba(255,255,255,0.85);
-  font-family: var(--font-body);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 0.25rem 0.7rem;
-  border-radius: 50px;
-  align-self: flex-start;
+  background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9);
+  font-family: var(--font-body); font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 0.22rem 0.65rem; border-radius: 50px; align-self: flex-start;
 }
 
 .cardDesc {
-  font-family: var(--font-body);
-  font-size: 0.84rem;
-  font-weight: 300;
-  color: rgba(255,255,255,0.8);
-  line-height: 1.6;
+  font-family: var(--font-body); font-size: 0.84rem; font-weight: 300;
+  color: rgba(255,255,255,0.82); line-height: 1.6;
 }
 
 .cardDetails {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  border-top: 1px solid rgba(255,255,255,0.12);
-  padding-top: 0.7rem;
+  display: flex; flex-direction: column; gap: 0.2rem;
+  border-top: 1px solid rgba(255,255,255,0.12); padding-top: 0.65rem;
 }
 .cardDetail {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 300;
-  color: rgba(255,255,255,0.6);
+  font-family: var(--font-body); font-size: 0.75rem; font-weight: 300;
+  color: rgba(255,255,255,0.62);
 }
 
 .cardActions {
-  display: flex;
-  gap: 0.8rem;
-  align-items: center;
-  padding-top: 0.4rem;
+  display: flex; gap: 0.8rem; align-items: center; padding-top: 0.2rem;
 }
 .mapsBtn {
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  color: rgba(255,255,255,0.55);
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  font-family: var(--font-body); font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.06em; color: rgba(255,255,255,0.5);
+  text-decoration: underline; text-underline-offset: 2px; flex-shrink: 0;
   transition: color 0.2s;
-  flex-shrink: 0;
 }
 .mapsBtn:hover { color: white; }
 
 .voteBtn {
-  flex: 1;
-  background: #f0147a;
-  color: white;
-  padding: 0.8rem 1rem;
-  border-radius: 8px;
-  font-family: var(--font-display);
-  font-size: 1rem;
-  letter-spacing: 0.06em;
-  box-shadow: 3px 3px 0 rgba(0,0,0,0.3);
+  flex: 1; background: #f0147a; color: white;
+  padding: 0.8rem 1rem; border-radius: 8px;
+  font-family: var(--font-display); font-size: 1rem; letter-spacing: 0.06em;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.25);
   transition: background 0.15s;
 }
 .voteBtn:hover { background: #ff2d8a; }
 
 .votedLabel {
-  flex: 1;
-  text-align: center;
-  font-family: var(--font-display);
-  font-size: 1rem;
-  letter-spacing: 0.1em;
-  color: #d4f060;
+  flex: 1; text-align: center;
+  font-family: var(--font-display); font-size: 1rem; letter-spacing: 0.1em; color: #d4f060;
 }
 
 /* ── Nav ── */
 .deckNav {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 1.3rem 0;
+  display: flex; justify-content: space-between;
+  padding: 0.8rem 1rem 0;
 }
 .navBtn {
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--blue);
-  padding: 0.5rem 0;
-  transition: opacity 0.2s;
-  background: rgba(232,245,208,0.7);
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+  font-family: var(--font-body); font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; color: #4455ee;
+  background: rgba(210,240,160,0.9); padding: 0.5rem 1rem;
+  border-radius: 8px; transition: opacity 0.2s;
 }
 .navBtn:disabled { opacity: 0.25; pointer-events: none; }
 .navBtn:not(:disabled):hover { opacity: 0.7; }
@@ -325,4 +240,4 @@
 .confetti { position: fixed; inset: 0; pointer-events: none; z-index: 200; overflow: hidden; }
 
 .notFound { display: flex; align-items: center; justify-content: center; min-height: 100dvh; }
-.notFound button { font-family: var(--font-body); font-size: 0.8rem; color: var(--blue); }
+.notFound button { font-family: var(--font-body); font-size: 0.8rem; color: #4455ee; }
