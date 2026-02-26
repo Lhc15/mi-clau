@@ -67,8 +67,9 @@ export default function TinderScreen({ onMatch }) {
 
   return (
     <div className={styles.screen}>
-      {/* Background */}
-      <div className={styles.bg} />
+
+      {/* Floral SVG ornaments */}
+      <FloralDecor />
 
       {/* Logo Tinder-style */}
       <div className={styles.topBar}>
@@ -334,3 +335,50 @@ function BrokenHeartSVG() {
 
 // small helper to avoid template literal in JSX style prop
 const var_ease_spring = [0.16, 1, 0.3, 1]
+
+// ─── Floral decorative SVG ornaments ────────────────────────────────────────
+function FloralDecor() {
+  return (
+    <svg
+      className={styles.floralDecor}
+      viewBox="0 0 400 800"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+    >
+      <g opacity="0.22">
+        <ellipse cx="30" cy="26" rx="5" ry="9" fill="#f5d5d3" transform="rotate(-20 30 26)"/>
+        <ellipse cx="40" cy="32" rx="5" ry="9" fill="#f5d5d3" transform="rotate(30 40 32)"/>
+        <ellipse cx="20" cy="32" rx="5" ry="9" fill="#f5d5d3" transform="rotate(-70 20 32)"/>
+        <circle cx="30" cy="32" r="6" fill="#e8a4a0"/>
+        <path d="M30 42 Q35 62 28 80" stroke="#c9a96e" strokeWidth="1.5" strokeLinecap="round"/>
+      </g>
+      <g opacity="0.18" transform="translate(345, 15)">
+        <ellipse cx="20" cy="30" rx="6" ry="10" fill="#c9a96e" transform="rotate(10 20 30)"/>
+        <ellipse cx="30" cy="20" rx="6" ry="10" fill="#e8a4a0" transform="rotate(60 30 20)"/>
+        <ellipse cx="35" cy="35" rx="6" ry="10" fill="#f5d5d3" transform="rotate(-40 35 35)"/>
+        <ellipse cx="15" cy="35" rx="6" ry="10" fill="#c9a96e" transform="rotate(-100 15 35)"/>
+        <circle cx="25" cy="30" r="6" fill="#e8a4a0"/>
+      </g>
+      <g opacity="0.15" transform="translate(0, 700)">
+        <path d="M5 60 Q30 30 55 10" stroke="#c9a96e" strokeWidth="2" strokeLinecap="round" fill="none"/>
+        <ellipse cx="25" cy="40" rx="8" ry="14" fill="#e8a4a0" transform="rotate(-50 25 40)"/>
+        <ellipse cx="42" cy="22" rx="7" ry="12" fill="#f5d5d3" transform="rotate(-30 42 22)"/>
+      </g>
+      <g opacity="0.17" transform="translate(330, 720)">
+        <ellipse cx="30" cy="13" rx="4" ry="8" fill="#f5d5d3"/>
+        <ellipse cx="40" cy="20" rx="4" ry="8" fill="#e8a4a0" transform="rotate(60 40 20)"/>
+        <ellipse cx="38" cy="32" rx="4" ry="8" fill="#f5d5d3" transform="rotate(120 38 32)"/>
+        <ellipse cx="22" cy="32" rx="4" ry="8" fill="#e8a4a0" transform="rotate(-120 22 32)"/>
+        <ellipse cx="20" cy="20" rx="4" ry="8" fill="#f5d5d3" transform="rotate(-60 20 20)"/>
+        <circle cx="30" cy="25" r="6" fill="#c9a96e"/>
+      </g>
+      <g opacity="0.12">
+        <ellipse cx="8"  cy="380" rx="4" ry="7" fill="#e8a4a0" transform="rotate(25 8 380)"/>
+        <ellipse cx="6"  cy="460" rx="4" ry="7" fill="#f5d5d3" transform="rotate(40 6 460)"/>
+        <ellipse cx="394" cy="350" rx="4" ry="7" fill="#e8a4a0" transform="rotate(-25 394 350)"/>
+        <ellipse cx="393" cy="440" rx="4" ry="8" fill="#c9a96e" transform="rotate(-45 393 440)"/>
+      </g>
+    </svg>
+  )
+}

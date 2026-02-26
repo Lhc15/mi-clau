@@ -1,218 +1,364 @@
+/* ─────────────────────────────────────────
+   HOME — fullscreen sections storytelling
+   littlebig.band inspired
+───────────────────────────────────────── */
+
 .page {
-  min-height: 100dvh;
   background: var(--paper);
+  overflow-x: hidden;
+}
+
+/* ═══════════════════════════════════════
+   SECCIÓN 1 — Cover fullscreen
+═══════════════════════════════════════ */
+.s1 {
+  position: relative;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 0 calc(2rem + var(--safe-bottom));
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 1.5rem;
 }
 
-/* ── Header ── */
-.header {
-  padding: 2.2rem 1.5rem 0;
+/* Fondo crema con gradiente suave */
+.s1::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 15%, rgba(232,164,160,0.14) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 80%, rgba(201,169,110,0.10) 0%, transparent 50%);
+}
+
+/* Flores decorativas en esquinas */
+.s1Floral {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.floralCorner {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+}
+.floral_tl { top: -10px; left: -10px; }
+.floral_br { bottom: -10px; right: -10px; }
+
+/* Contenido central */
+.s1Content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
+  align-items: center;
+  gap: 0;
+  will-change: transform;
 }
 
-.headerEyebrow {
+.s1Eyebrow {
   font-family: var(--font-body);
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 400;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--ink-4);
+  margin-bottom: 1.2rem;
 }
 
-.headerRule {
-  height: 1px;
-  background: var(--ink);
-}
-
-/* ── Hero text ── */
-.hero {
-  padding: 2.5rem 1.5rem 2rem;
-}
-
-.heroLabel {
-  font-family: var(--font-body);
-  font-size: 0.65rem;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-4);
-  margin-bottom: 0.6rem;
-}
-
-.heroTitle {
+.s1Title {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 13vw, 4.2rem);
+  font-size: clamp(4rem, 22vw, 5.5rem);
   font-weight: 300;
-  line-height: 0.95;
+  line-height: 0.92;
   color: var(--ink);
-  margin-bottom: 1rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.8rem;
 }
-.heroTitle em {
+.s1Title em {
   font-style: italic;
   font-weight: 400;
   color: var(--blush-deep);
 }
 
-.heroSub {
-  font-family: var(--font-body);
-  font-size: 0.88rem;
-  font-weight: 300;
-  color: var(--ink-3);
-  line-height: 1.6;
-  max-width: 240px;
+.s1Rule {
+  width: 60px;
+  height: 1px;
+  background: var(--ink-4);
+  transform-origin: left center;
+  margin: 0 auto;
+  margin-bottom: 1.2rem;
 }
 
-/* ── Citas Feature Block ── */
-.citasFeature {
-  display: block;
-  width: 100%;
-  background: var(--ink);
-  color: var(--paper);
-  text-align: left;
-  padding: 2rem 1.5rem 1.8rem;
-  position: relative;
-  overflow: hidden;
-  transition: background 0.2s;
-}
-.citasFeature:hover { background: var(--ink-2); }
-
-/* big decorative number behind */
-.citasNumber {
-  position: absolute;
-  top: -0.5rem;
-  right: 1rem;
-  font-family: var(--font-display);
-  font-size: 9rem;
-  font-weight: 600;
-  color: rgba(255,255,255,0.04);
-  line-height: 1;
-  pointer-events: none;
-  user-select: none;
-  letter-spacing: -0.05em;
-}
-
-.citasContent {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.citasTop {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.2rem;
-}
-
-.citasTag {
-  font-family: var(--font-body);
-  font-size: 0.62rem;
-  font-weight: 400;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--blush);
-}
-
-.citasArrow {
-  font-size: 1.2rem;
-  color: var(--paper);
-  opacity: 0.6;
-  transition: transform 0.2s, opacity 0.2s;
-}
-.citasFeature:hover .citasArrow {
-  transform: translate(3px, -3px);
-  opacity: 1;
-}
-
-.citasTitle {
-  font-family: var(--font-display);
-  font-size: 2.8rem;
-  font-weight: 400;
-  color: var(--paper);
-  line-height: 1;
-  letter-spacing: -0.01em;
-}
-
-.citasSub {
+.s1Sub {
   font-family: var(--font-display);
   font-size: 1rem;
   font-style: italic;
-  color: rgba(250,248,245,0.55);
-}
-
-.citasDivider {
-  height: 1px;
-  background: rgba(255,255,255,0.12);
-  margin: 0.8rem 0;
-}
-
-.citasDesc {
-  font-family: var(--font-body);
-  font-size: 0.82rem;
   font-weight: 300;
-  color: rgba(250,248,245,0.6);
-  line-height: 1.55;
+  color: var(--ink-3);
+  letter-spacing: 0.06em;
 }
 
-/* ── Coming soon ── */
-.comingSoon {
-  padding: 2rem 1.5rem 0;
+/* Scroll hint */
+.scrollHint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  z-index: 2;
+}
+.scrollDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--ink-4);
 }
 
-.comingSoonLabel {
+/* ═══════════════════════════════════════
+   SECCIÓN 2 — Editorial text
+═══════════════════════════════════════ */
+.s2 {
+  min-height: 60dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  background: var(--paper-2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle rotated rule behind */
+.s2::before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 120%;
+  background: var(--paper-3);
+  left: 50%;
+  top: -10%;
+  transform: rotate(6deg);
+}
+
+.s2Inner {
+  max-width: var(--max-w);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.s2Label {
   font-family: var(--font-body);
   font-size: 0.62rem;
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--ink-4);
-  margin-bottom: 1rem;
+  color: var(--blush-deep);
 }
 
-.comingSoonGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.6rem;
+.s2Text {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 7vw, 2rem);
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
 }
 
-.comingSoonItem {
-  background: var(--paper-2);
-  border: 1px solid var(--paper-3);
-  border-radius: 12px;
-  padding: 1.1rem 1rem;
+.s2Text2 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--ink-3);
+  line-height: 1.4;
+}
+
+/* ═══════════════════════════════════════
+   SECCIÓN 3 — Citas feature fullscreen
+═══════════════════════════════════════ */
+.s3 {
+  min-height: 85dvh;
+  display: flex;
+  align-items: stretch;
+  background: var(--paper);
+  padding: 1.5rem;
+}
+
+.s3Card {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  background: var(--ink);
+  border-radius: 24px;
+  padding: 2.2rem 2rem;
+  text-align: left;
+  color: var(--paper);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.25s;
+  width: 100%;
+}
+.s3Card:hover { background: var(--ink-2); }
+
+/* Numero enorme decorativo */
+.s3BigNum {
+  position: absolute;
+  bottom: -1.5rem;
+  right: 1.2rem;
+  font-family: var(--font-display);
+  font-size: 12rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.04);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  pointer-events: none;
+  user-select: none;
+}
+
+.s3Body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: 100%;
+}
+
+.s3TopRow {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  justify-content: space-between;
+}
+
+.s3Badge {
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--blush);
+}
+
+.s3Arrow {
+  font-size: 1.3rem;
+  color: rgba(250,248,245,0.5);
+  transition: transform 0.2s, color 0.2s;
+}
+.s3Card:hover .s3Arrow {
+  transform: translate(4px, -4px);
+  color: var(--paper);
+}
+
+.s3Title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 13vw, 4rem);
+  font-weight: 400;
+  color: var(--paper);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.s3Rule {
+  height: 1px;
+  background: rgba(255,255,255,0.12);
+}
+
+.s3Desc {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: rgba(250,248,245,0.55);
+  line-height: 1.55;
+}
+
+.s3Cta {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-top: 0.3rem;
+  transition: letter-spacing 0.2s;
+}
+.s3Card:hover .s3Cta { letter-spacing: 0.16em; }
+
+/* ═══════════════════════════════════════
+   SECCIÓN 4 — Próximamente
+═══════════════════════════════════════ */
+.s4 {
+  min-height: 50dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--paper-2);
+  padding: 4rem 1.5rem calc(4rem + var(--safe-bottom));
+}
+
+.s4Inner {
+  max-width: var(--max-w);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.s4Label {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+}
+
+.s4Grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--paper-3);
+}
+
+.s4Item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--paper-3);
+  opacity: 0.5;
+}
+
+.s4Emoji { font-size: 1.4rem; flex-shrink: 0; }
+
+.s4Name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.s4Desc {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
   font-weight: 300;
   color: var(--ink-4);
 }
-.comingSoonItem span:first-child { font-size: 1.2rem; }
 
-/* ── Footer ── */
-.footer {
-  padding: 2.5rem 1.5rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.footerRule { height: 1px; background: var(--paper-3); }
-
-.footer p {
+.s4Footer {
   font-family: var(--font-body);
   font-size: 0.68rem;
   font-weight: 300;
   letter-spacing: 0.1em;
   color: var(--ink-4);
+  margin-top: 0.5rem;
 }
