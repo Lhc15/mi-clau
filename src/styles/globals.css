@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Cormorant:ital,wght@1,300;1,400&display=swap');
-@import './leopard.css';
 
 /* ─────────────────────────────────────────────
    DESIGN SYSTEM — para-ti
@@ -7,22 +6,26 @@
 ───────────────────────────────────────────── */
 
 :root {
-  /* Palette */
-  --yellow:       #f5e642;
-  --fucsia:       #f0147a;
-  --orange:       #f76b1c;
-  --teal:         #00c9b1;
-  --black:        #0a0806;
-  --offwhite:     #faf6ee;
-  --camel:        #c9a96e;
-  --brown:        #3d2408;
+  /* Palette — bold playful */
+  --mint:         #e8f5d0;      /* fondo verde menta claro */
+  --yellow:       #d4f060;      /* verde-amarillo eléctrico */
+  --blue:         #4455ee;      /* azul eléctrico */
+  --fucsia:       #ff10c8;      /* fucsia puro */
+  --orange:       #ff5500;      /* naranja */
+  --purple:       #7755dd;      /* morado */
+  --cyan:         #00ccff;      /* cyan */
+  --black:        #111111;
+  --offwhite:     #f8fff0;
+  --camel:        #4455ee;      /* reuse blue as accent */
+  --brown:        #2a1a6e;      /* purple dark */
 
-  /* Leopard confetti colors */
-  --conf-1: #3d2408;
-  --conf-2: #f5e642;
-  --conf-3: #0a0806;
-  --conf-4: #c9a96e;
-  --conf-5: #f0147a;
+  /* Confetti colors */
+  --conf-1: #4455ee;
+  --conf-2: #ff10c8;
+  --conf-3: #ff5500;
+  --conf-4: #7755dd;
+  --conf-5: #00ccff;
+  --conf-6: #d4f060;
 
   /* Typography */
   --font-display: 'Bebas Neue', 'Anton', Impact, sans-serif;

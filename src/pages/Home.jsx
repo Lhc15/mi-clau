@@ -220,7 +220,7 @@ function CitasBlock({ onPress }) {
 /* ══════════════════════════════════════════════════════
    CONFETI LEOPARDO
 ══════════════════════════════════════════════════════ */
-const CONF_COLORS = ['#3d2408', '#f5e642', '#0a0806', '#c9a96e', '#f0147a', '#f76b1c']
+const CONF_COLORS = ['#4455ee', '#ff10c8', '#ff5500', '#7755dd', '#00ccff', '#d4f060', '#111111']
 
 function LeopardConfetti() {
   const pieces = Array.from({ length: 60 }, (_, i) => ({
