@@ -1,0 +1,167 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  background: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ─── Background orbs for parallax depth ─── */
+.lightOrb1 {
+  position: absolute;
+  width: 60vmax;
+  height: 60vmax;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(201, 169, 110, 0.08) 0%,
+    rgba(201, 169, 110, 0.03) 40%,
+    transparent 70%
+  );
+  top: -10vmax;
+  left: -10vmax;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.lightOrb2 {
+  position: absolute;
+  width: 50vmax;
+  height: 50vmax;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(196, 120, 106, 0.07) 0%,
+    rgba(196, 120, 106, 0.02) 40%,
+    transparent 70%
+  );
+  bottom: -5vmax;
+  right: -5vmax;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* ─── Vignette ─── */
+.vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 30%,
+    rgba(10, 8, 5, 0.7) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ─── Central content ─── */
+.content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  max-width: var(--max-w);
+  width: 100%;
+}
+
+/* ─── Eyebrow ─── */
+.eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 1.6rem;
+}
+
+/* ─── Headline ─── */
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 10vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.lineNormal {
+  font-weight: 400;
+  color: var(--cream);
+  display: inline;
+}
+
+.lineItalic {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold-light);
+  display: inline;
+}
+
+/* Words wrapper for reveal animation */
+.word {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+/* ─── Divider ─── */
+.divider {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+  margin: 0 auto 2.4rem;
+  transform-origin: center;
+}
+
+/* ─── CTA Button ─── */
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: transparent;
+  border: 1px solid rgba(201, 169, 110, 0.4);
+  color: var(--gold-light);
+  padding: 0.85rem 2.4rem;
+  border-radius: 50px;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaBtn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.ctaBtn:hover::before { opacity: 0.12; }
+.ctaBtn:hover { border-color: rgba(201, 169, 110, 0.8); }
+
+.ctaText { position: relative; z-index: 1; }
+.ctaArrow {
+  position: relative; z-index: 1;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+/* ─── Hint ─── */
+.hint {
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  color: var(--gold-dim);
+  margin-top: 3rem;
+  text-transform: uppercase;
+}

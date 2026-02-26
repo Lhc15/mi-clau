@@ -1,0 +1,204 @@
+.card {
+  position: relative;
+  background: var(--white);
+  border-bottom: 1px solid var(--paper-3);
+  display: flex;
+  overflow: hidden;
+  transition: opacity 0.3s, filter 0.3s;
+}
+
+.card:first-child { border-top: 1px solid var(--paper-3); }
+
+.cardVoted {
+  background: var(--paper);
+}
+
+.cardDimmed {
+  opacity: 0.4;
+  filter: grayscale(0.3);
+}
+
+/* ── Left accent bar ── */
+.accentBar {
+  width: 3px;
+  flex-shrink: 0;
+  align-self: stretch;
+  opacity: 0.7;
+  transition: opacity 0.3s, width 0.3s;
+}
+.cardVoted .accentBar {
+  width: 4px;
+  opacity: 1;
+}
+
+/* ── Inner content ── */
+.inner {
+  flex: 1;
+  padding: 1.3rem 1.3rem 1.3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ── Top row ── */
+.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.topLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.emoji {
+  font-size: 1.8rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.location {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--ink-3);
+  line-height: 1.2;
+}
+
+/* ── Voted checkmark ── */
+.votedMark {
+  font-size: 1rem;
+  color: var(--blush-deep);
+  font-weight: 700;
+  flex-shrink: 0;
+  padding-top: 0.1rem;
+}
+
+/* ── Meta row ── */
+.metaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.typeTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.28rem 0.7rem;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
+.typeDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.price {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.priceLabel {
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: var(--ink-4);
+}
+
+/* ── Description ── */
+.description {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--ink-2);
+  line-height: 1.6;
+}
+
+/* ── Details ── */
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+}
+
+.detail {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--ink-3);
+  line-height: 1.4;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--paper-3);
+}
+
+/* ── Actions ── */
+.actions {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.mapsBtn {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--ink-4);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--paper-3);
+  transition: color 0.2s, text-decoration-color 0.2s;
+  flex-shrink: 0;
+}
+.mapsBtn:hover {
+  color: var(--ink);
+  text-decoration-color: var(--ink-3);
+}
+
+.voteBtn {
+  flex: 1;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.72rem 1rem;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  transition: background 0.2s, opacity 0.2s;
+}
+.voteBtn:not(:disabled):hover { background: var(--ink-2); }
+.voteBtn:disabled { cursor: not-allowed; }
+
+.voteBtnVoted {
+  background: color-mix(in srgb, var(--accent, #c4706a) 15%, var(--paper));
+  color: var(--accent, var(--blush-deep));
+  border: 1.5px solid color-mix(in srgb, var(--accent, #c4706a) 30%, transparent);
+  pointer-events: none;
+  font-weight: 500;
+}

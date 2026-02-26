@@ -1,0 +1,153 @@
+.page {
+  min-height: 100dvh;
+  background: var(--paper);
+}
+
+.inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 0 calc(3rem + var(--safe-bottom));
+}
+
+/* ── Header ── */
+.header {
+  padding: 2.2rem 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 0;
+}
+
+.back {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+  padding: 0;
+  align-self: flex-start;
+  transition: color 0.2s;
+}
+.back:hover { color: var(--ink); }
+
+.headerRule { height: 1px; background: var(--ink); }
+
+.headerBottom {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0.5rem 0 0;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.count {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: var(--ink-4);
+  letter-spacing: 0.1em;
+}
+
+/* ── List ── */
+.list {
+  margin-top: 1.5rem;
+}
+
+/* ── Row ── */
+.row {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.4rem 1.5rem;
+  text-align: left;
+  background: transparent;
+  border-bottom: 1px solid var(--paper-3);
+  transition: background 0.15s;
+  position: relative;
+}
+.row:first-child { border-top: 1px solid var(--paper-3); }
+.row:hover { background: var(--paper-2); }
+
+.rowNum {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--ink-4);
+  letter-spacing: 0.05em;
+  padding-top: 0.15rem;
+  flex-shrink: 0;
+  min-width: 1.8rem;
+}
+
+.rowContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.rowTop {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.rowDate {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+}
+
+.rowBadge {
+  background: var(--blush-light);
+  color: var(--blush-deep);
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.55rem;
+  border-radius: 50px;
+}
+
+.rowTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.rowDesc {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--ink-3);
+  line-height: 1.5;
+}
+
+.rowArrow {
+  font-size: 1.1rem;
+  color: var(--ink-4);
+  transition: transform 0.2s, color 0.2s;
+  padding-top: 0.2rem;
+  flex-shrink: 0;
+}
+.row:hover .rowArrow {
+  transform: translateX(4px);
+  color: var(--ink);
+}

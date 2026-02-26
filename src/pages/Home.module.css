@@ -1,0 +1,218 @@
+.page {
+  min-height: 100dvh;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 0 calc(2rem + var(--safe-bottom));
+}
+
+/* ── Header ── */
+.header {
+  padding: 2.2rem 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.headerEyebrow {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+}
+
+.headerRule {
+  height: 1px;
+  background: var(--ink);
+}
+
+/* ── Hero text ── */
+.hero {
+  padding: 2.5rem 1.5rem 2rem;
+}
+
+.heroLabel {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+  margin-bottom: 0.6rem;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 13vw, 4.2rem);
+  font-weight: 300;
+  line-height: 0.95;
+  color: var(--ink);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+.heroTitle em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--blush-deep);
+}
+
+.heroSub {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--ink-3);
+  line-height: 1.6;
+  max-width: 240px;
+}
+
+/* ── Citas Feature Block ── */
+.citasFeature {
+  display: block;
+  width: 100%;
+  background: var(--ink);
+  color: var(--paper);
+  text-align: left;
+  padding: 2rem 1.5rem 1.8rem;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.2s;
+}
+.citasFeature:hover { background: var(--ink-2); }
+
+/* big decorative number behind */
+.citasNumber {
+  position: absolute;
+  top: -0.5rem;
+  right: 1rem;
+  font-family: var(--font-display);
+  font-size: 9rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.04);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.05em;
+}
+
+.citasContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.citasTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.2rem;
+}
+
+.citasTag {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--blush);
+}
+
+.citasArrow {
+  font-size: 1.2rem;
+  color: var(--paper);
+  opacity: 0.6;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.citasFeature:hover .citasArrow {
+  transform: translate(3px, -3px);
+  opacity: 1;
+}
+
+.citasTitle {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: var(--paper);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.citasSub {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-style: italic;
+  color: rgba(250,248,245,0.55);
+}
+
+.citasDivider {
+  height: 1px;
+  background: rgba(255,255,255,0.12);
+  margin: 0.8rem 0;
+}
+
+.citasDesc {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: rgba(250,248,245,0.6);
+  line-height: 1.55;
+}
+
+/* ── Coming soon ── */
+.comingSoon {
+  padding: 2rem 1.5rem 0;
+}
+
+.comingSoonLabel {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+  margin-bottom: 1rem;
+}
+
+.comingSoonGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.comingSoonItem {
+  background: var(--paper-2);
+  border: 1px solid var(--paper-3);
+  border-radius: 12px;
+  padding: 1.1rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--ink-4);
+}
+.comingSoonItem span:first-child { font-size: 1.2rem; }
+
+/* ── Footer ── */
+.footer {
+  padding: 2.5rem 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footerRule { height: 1px; background: var(--paper-3); }
+
+.footer p {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--ink-4);
+}
